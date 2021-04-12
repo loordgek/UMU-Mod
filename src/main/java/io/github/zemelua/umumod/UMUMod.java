@@ -1,9 +1,9 @@
 package io.github.zemelua.umumod;
 
-import net.minecraft.block.Block;
+import io.github.zemelua.umumod.block.UMUBlocks;
+import io.github.zemelua.umumod.item.UMUItems;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -19,11 +19,12 @@ import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("UMUMod")
+@Mod(UMUMod.MODID)
 public class UMUMod {
+	public static final String MODID = "umumod";
 
 	// Directly reference a log4j logger.
-	private static final Logger LOGGER = LogManager.getLogger();
+	public static final Logger LOGGER = LogManager.getLogger();
 
 	public UMUMod() {
 		// Register the setup method for modloading
@@ -34,6 +35,9 @@ public class UMUMod {
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
 		// Register the doClientStuff method for modloading
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+
+		UMUBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		UMUItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);
@@ -72,14 +76,18 @@ public class UMUMod {
 		LOGGER.info("HELLO from server starting");
 	}
 
+/*
 	// You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
 	// Event bus for receiving Registry Events)
+
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 	public static class RegistryEvents {
 		@SubscribeEvent
 		public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
 			// register a new block here
+			blockRegistryEvent.getRegistry().register(new Block(Block.Properties.create(Material.WOOD, MaterialColor.SNOW).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)).setRegistryName(new ResourceLocation("umumod", "white_planks")));
 			LOGGER.info("HELLO from Register Block");
 		}
 	}
+*/
 }
