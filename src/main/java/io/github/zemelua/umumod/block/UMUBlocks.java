@@ -13,4 +13,19 @@ public class UMUBlocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, UMUMod.MODID);
 
 	public static final RegistryObject<Block> WHITE_PLANKS = BLOCKS.register("white_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.SNOW).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> ORANGE_PLANKS = BLOCKS.register("orange_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.ADOBE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> MAGENTA_PLANKS = BLOCKS.register("magenta_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.MAGENTA).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> LIGHT_BLUE_PLANKS = BLOCKS.register("light_blue_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> YELLOW_PLANKS = BLOCKS.register("yellow_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.YELLOW).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> LIME_PLANKS = BLOCKS.register("lime_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.LIME).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> PINK_PLANKS = BLOCKS.register("pink_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.PINK).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> GRAY_PLANKS = BLOCKS.register("gray_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GRAY).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> LIGHT_GRAY_PLANKS = BLOCKS.register("light_gray_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_GRAY).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> CYAN_PLANKS = BLOCKS.register("cyan_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.CYAN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> PURPLE_PLANKS = BLOCKS.register("purple_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.PURPLE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> BLUE_PLANKS = BLOCKS.register("blue_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.BLUE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> BROWN_PLANKS = BLOCKS.register("brown_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> GREEN_PLANKS = BLOCKS.register("green_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> RED_PLANKS = BLOCKS.register("red_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.RED).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> BLACK_PLANKS = BLOCKS.register("black_planks", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.BLACK).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
 }
