@@ -29,4 +29,5 @@ public class UMUItems {
 	public static final RegistryObject<Item> RED_PLANKS = ITEMS.register("red_planks", () -> new BlockItem(UMUBlocks.RED_PLANKS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> BLACK_PLANKS = ITEMS.register("black_planks", () -> new BlockItem(UMUBlocks.BLACK_PLANKS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> WOODEN_BOX = ITEMS.register("wooden_box", () -> new BlockItem(UMUBlocks.WOODEN_BOX.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> QUARTZ_COLUMN = ITEMS.register("quartz_column", () -> new BlockItem(UMUBlocks.QUARTZ_COLUMN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 }
