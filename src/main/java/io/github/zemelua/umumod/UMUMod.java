@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(UMUMod.MODID)
 public class UMUMod {
-	public static final String MODID = "umumod";
+	public static final String MODID = "umu";
 
 	// Directly reference a log4j logger.
 	public static final Logger LOGGER = LogManager.getLogger();
