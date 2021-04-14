@@ -39,6 +39,7 @@ public interface IConnection {
 	@OnlyIn(Dist.CLIENT)
 	public static class Deserializer implements JsonDeserializer<IConnection> {
 		public static final ImmutableMap<String, Class<? extends IConnection>> CONNECTIONS = ImmutableMap.<String, Class<? extends IConnection>>builder()
+			.put("flexible", FlexibleConnection.class)
 			.build();
 
 		@Override
