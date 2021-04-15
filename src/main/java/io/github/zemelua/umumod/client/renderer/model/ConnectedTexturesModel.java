@@ -53,7 +53,7 @@ public class ConnectedTexturesModel implements IModelGeometry<ConnectedTexturesM
 	@Override
 	public Collection<RenderMaterial> getTextures(IModelConfiguration owner, Function<ResourceLocation, IUnbakedModel> modelGetter, Set<Pair<String, String>> missingTextureErrors) {
 		List<RenderMaterial> textures = new ArrayList<>();
-		connections.values().stream().forEach(i -> textures.addAll(i.getTextures()));
+		connections.values().forEach(i -> textures.addAll(i.getTextures()));
 		textures.addAll(baseModel.getTextures(modelGetter, missingTextureErrors));
 		return textures;
 	}
@@ -68,7 +68,7 @@ public class ConnectedTexturesModel implements IModelGeometry<ConnectedTexturesM
 
 		private static final ModelProperty<ConnectionData> CONNECTION_DATA = new ModelProperty<>();
 
-		private static FaceBakery FACE_BAKERY = new FaceBakery();
+		private static final FaceBakery FACE_BAKERY = new FaceBakery();
 
 		public BakedModel(BlockModel baseModel, IBakedModel baseModelBaked, Map<String, IConnection> connections, ImmutableMap<ItemCameraTransforms.TransformType, TransformationMatrix> cameraTransforms, IModelTransform modelTransform, ResourceLocation modelLocation) {
 			this.baseModel = baseModel;
