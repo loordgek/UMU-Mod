@@ -1,6 +1,7 @@
 package io.github.zemelua.umumod;
 
 import io.github.zemelua.umumod.block.UMUBlocks;
+import io.github.zemelua.umumod.client.renderer.model.UMUModelLoaders;
 import io.github.zemelua.umumod.item.UMUItems;
 import io.github.zemelua.umumod.tileentity.UMUTileEntities;
 import net.minecraft.block.Blocks;
@@ -40,6 +41,8 @@ public class UMUMod {
 		UMUBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		UMUItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		UMUTileEntities.TILE_ENTITY.register(FMLJavaModLoadingContext.get().getModEventBus());
+
+		FMLJavaModLoadingContext.get().getModEventBus().register(UMUModelLoaders.class);
 
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);

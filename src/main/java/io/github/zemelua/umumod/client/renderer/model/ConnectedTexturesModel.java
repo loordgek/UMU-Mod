@@ -16,14 +16,14 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.resources.IResourceManager;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.TransformationMatrix;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraftforge.client.model.IModelConfiguration;
 import net.minecraftforge.client.model.IModelLoader;
 import net.minecraftforge.client.model.ModelTransformComposition;
 import net.minecraftforge.client.model.PerspectiveMapWrapper;
-import net.minecraftforge.client.model.data.IDynamicBakedModel;
-import net.minecraftforge.client.model.data.IModelData;
-import net.minecraftforge.client.model.data.ModelProperty;
+import net.minecraftforge.client.model.data.*;
 import net.minecraftforge.client.model.geometry.IModelGeometry;
 
 import javax.annotation.Nonnull;
@@ -145,6 +145,15 @@ public class ConnectedTexturesModel implements IModelGeometry<ConnectedTexturesM
 			}
 
 			return builder.build().getQuads(state, side, rand);
+		}
+
+		@Override
+		public IModelData getModelData(@Nonnull IBlockDisplayReader world, @Nonnull BlockPos pos, @Nonnull BlockState state, @Nonnull IModelData tileData) {
+			if (tileData == EmptyModelData.INSTANCE) {
+				tileData = new ModelDataMap.Builder().withProperty(CONNECTION_DATA).build();
+			}
+			tileData.setData(CONNECTION_DATA, new ConnectionData(world, pos));
+			return tileData;
 		}
 
 		@Override

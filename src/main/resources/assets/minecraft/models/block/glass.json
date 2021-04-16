@@ -1,0 +1,66 @@
+{
+	"loader": "umu:connected-textures",
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"all": "minecraft:block/glass"
+	},
+	"connections": {
+		"all": {
+			"type": "flexible",
+			"flexible": [
+				{
+					"into": "glass",
+					"textures": [
+						"minecraft:block/glass",
+						"umu:block/minecraft/glass_1",
+						"umu:block/minecraft/glass_2",
+						"umu:block/minecraft/glass_3",
+						"umu:block/minecraft/glass_4",
+						"umu:block/minecraft/glass_5",
+						"umu:block/minecraft/glass_6",
+						"umu:block/minecraft/glass_7",
+						"umu:block/minecraft/glass_8",
+						"umu:block/minecraft/glass_9",
+						"umu:block/minecraft/glass_10",
+						"umu:block/minecraft/glass_11",
+						"umu:block/minecraft/glass_12",
+						"umu:block/minecraft/glass_13",
+						"umu:block/minecraft/glass_14",
+						"umu:block/minecraft/glass_15",
+						"umu:block/minecraft/glass_16",
+						"umu:block/minecraft/glass_17",
+						"umu:block/minecraft/glass_18",
+						"umu:block/minecraft/glass_19",
+						"umu:block/minecraft/glass_20",
+						"umu:block/minecraft/glass_21",
+						"umu:block/minecraft/glass_22",
+						"umu:block/minecraft/glass_23",
+						"umu:block/minecraft/glass_24",
+						"umu:block/minecraft/glass_25",
+						"umu:block/minecraft/glass_26",
+						"umu:block/minecraft/glass_27",
+						"umu:block/minecraft/glass_28",
+						"umu:block/minecraft/glass_29",
+						"umu:block/minecraft/glass_30",
+						"umu:block/minecraft/glass_31",
+						"umu:block/minecraft/glass_32",
+						"umu:block/minecraft/glass_33",
+						"umu:block/minecraft/glass_34",
+						"umu:block/minecraft/glass_35",
+						"umu:block/minecraft/glass_36",
+						"umu:block/minecraft/glass_37",
+						"umu:block/minecraft/glass_38",
+						"umu:block/minecraft/glass_39",
+						"umu:block/minecraft/glass_40",
+						"umu:block/minecraft/glass_41",
+						"umu:block/minecraft/glass_42",
+						"umu:block/minecraft/glass_43",
+						"umu:block/minecraft/glass_44",
+						"umu:block/minecraft/glass_45",
+						"umu:block/minecraft/glass_46"
+					]
+				}
+			]
+		}
+	}
+}

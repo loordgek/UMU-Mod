@@ -104,8 +104,8 @@ public class FlexibleConnection implements IConnection {
 			JsonObject jsonObject = jsonElement.getAsJsonObject();
 
 			List<Element> merges = new ArrayList<>();
-			if (jsonObject.has("merges")) {
-				for (JsonElement mergeElement : jsonObject.get("merges").getAsJsonArray()) {
+			if (jsonObject.has("flexible")) {
+				for (JsonElement mergeElement : jsonObject.get("flexible").getAsJsonArray()) {
 					JsonObject mergeObject = mergeElement.getAsJsonObject();
 
 					ResourceLocation into = null;
