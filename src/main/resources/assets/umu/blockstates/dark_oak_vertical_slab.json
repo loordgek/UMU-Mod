@@ -1,0 +1,9 @@
+{
+	"variants": {
+		"type=north":  { "model": "umu:block/dark_oak_vertical_slab" },
+		"type=south":  { "model": "umu:block/dark_oak_vertical_slab", "y": 180, "uvlock": true },
+		"type=west":   { "model": "umu:block/dark_oak_vertical_slab", "y": 270, "uvlock": true },
+		"type=east":   { "model": "umu:block/dark_oak_vertical_slab", "y": 90, "uvlock": true },
+		"type=double": { "model": "minecraft:block/dark_oak_planks" }
+	}
+}
