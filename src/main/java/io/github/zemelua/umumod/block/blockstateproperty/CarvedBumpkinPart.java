@@ -2,20 +2,20 @@ package io.github.zemelua.umumod.block.blockstateproperty;
 
 import net.minecraft.util.IStringSerializable;
 
-public enum BigCubeBlockPart implements IStringSerializable {
-	UPPER_FRONT_RIGHT("upper_front_right"),
-	UPPER_FRONT_LEFT ("upper_front_left"),
-	UPPER_BACK_RIGHT ("upper_back_right"),
-	UPPER_BACK_LEFT  ("upper_back_left"),
-	LOWER_FRONT_RIGHT("lower_front_right"),
+public enum CarvedBumpkinPart implements IStringSerializable {
 	LOWER_FRONT_LEFT ("lower_front_left"),
+	LOWER_FRONT_RIGHT("lower_front_right"),
+	LOWER_BACK_LEFT  ("lower_back_left"),
 	LOWER_BACK_RIGHT ("lower_back_right"),
-	LOWER_BACK_LEFT  ("lower_back_left")
+	UPPER_FRONT_LEFT ("upper_front_left"),
+	UPPER_FRONT_RIGHT("upper_front_right"),
+	UPPER_BACK_LEFT  ("upper_back_left"),
+	UPPER_BACK_RIGHT ("upper_back_right")
 	;
 
 	private String name;
 
-	private BigCubeBlockPart(String name) {
+	private CarvedBumpkinPart(String name) {
 		this.name = name;
 	}
 
