@@ -2,7 +2,7 @@ package io.github.zemelua.umumod.block.blockstateproperty;
 
 import net.minecraft.util.IStringSerializable;
 
-public enum CarvedBumpkinPart implements IStringSerializable {
+public enum BumpkinPart implements IStringSerializable {
 	LOWER_FRONT_LEFT ("lower_front_left"),
 	LOWER_FRONT_RIGHT("lower_front_right"),
 	LOWER_BACK_LEFT  ("lower_back_left"),
@@ -15,7 +15,7 @@ public enum CarvedBumpkinPart implements IStringSerializable {
 
 	private String name;
 
-	private CarvedBumpkinPart(String name) {
+	private BumpkinPart(String name) {
 		this.name = name;
 	}
 

@@ -11,5 +11,5 @@ public class UMUBlockStateProperties {
 
 	public static final EnumProperty<VerticalSlabType> VERTICAL_SLAB_TYPE = EnumProperty.create("type", VerticalSlabType.class);
 	public static final EnumProperty<ColumnType> COLUMN_TYPE = EnumProperty.create("type", ColumnType.class);
-	public static final EnumProperty<CarvedBumpkinPart> BIG_CUBE_PART = EnumProperty.create("part", CarvedBumpkinPart.class);
+	public static final EnumProperty<BumpkinPart> BUMPKIN_PART = EnumProperty.create("part", BumpkinPart.class);
 }

@@ -1,22 +1,29 @@
 package io.github.zemelua.umumod.block;
 
+import io.github.zemelua.umumod.block.blockstateproperty.BumpkinPart;
 import io.github.zemelua.umumod.block.blockstateproperty.UMUBlockStateProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.HorizontalBlock;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.state.DirectionProperty;
+import net.minecraft.item.ItemStack;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class BumpkinBlock extends Block {
-	private static final DirectionProperty FACING_X = UMUBlockStateProperties.FACING_X;
-	private static final DirectionProperty FACING_Y = UMUBlockStateProperties.FACING_Y;
-	private static final DirectionProperty FACING_Z = UMUBlockStateProperties.FACING_Z;
+import java.util.Optional;
+
+public class BumpkinBlock extends HorizontalBlock {
+	private static final EnumProperty<BumpkinPart> PART = UMUBlockStateProperties.BUMPKIN_PART;
 	private static final VoxelShape DOWN_NORTH_WEST_SHAPE = VoxelShapes.or(
 			Block.makeCuboidShape(11, 0, 3, 16, 16, 6),
 			Block.makeCuboidShape(3, 0, 11, 6, 16, 16),
@@ -61,53 +68,116 @@ public class BumpkinBlock extends Block {
 	public BumpkinBlock(Properties builder) {
 		super(builder);
 		this.setDefaultState(this.getStateContainer().getBaseState()
-				.with(FACING_X, Direction.NORTH).with(FACING_Y, Direction.DOWN).with(FACING_Z, Direction.WEST)
+				.with(PART, BumpkinPart.LOWER_FRONT_LEFT).with(HORIZONTAL_FACING, Direction.NORTH)
 		);
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		Direction x = state.get(FACING_X);
-		Direction y = state.get(FACING_Y);
-		Direction z = state.get(FACING_Z);
-		if (x == Direction.NORTH && y == Direction.DOWN && z == Direction.WEST) {
-			return DOWN_NORTH_WEST_SHAPE;
-		} else if (x == Direction.NORTH && y == Direction.DOWN && z == Direction.EAST) {
-			return DOWN_NORTH_EAST_SHAPE;
-		} else if (x == Direction.SOUTH && y == Direction.DOWN && z == Direction.WEST) {
-			return DOWN_SOUTH_WEST_SHAPE;
-		} else if (x == Direction.SOUTH && y == Direction.DOWN && z == Direction.EAST) {
-			return DOWN_SOUTH_EAST_SHAPE;
-		} else if (x == Direction.NORTH && y == Direction.UP && z == Direction.WEST) {
-			return UP_NORTH_WEST_SHAPE;
-		} else if (x == Direction.NORTH && y == Direction.UP && z == Direction.EAST) {
-			return UP_NORTH_EAST_SHAPE;
-		} else if (x == Direction.SOUTH && y == Direction.UP && z == Direction.WEST) {
-			return UP_SOUTH_WEST_SHAPE;
-		} else {
-			return UP_SOUTH_EAST_SHAPE;
+		switch (state.get(HORIZONTAL_FACING)) {
+			case NORTH:
+				switch (state.get(PART)) {
+					case LOWER_FRONT_LEFT: return DOWN_NORTH_WEST_SHAPE;
+					case LOWER_FRONT_RIGHT: return DOWN_NORTH_EAST_SHAPE;
+					case LOWER_BACK_LEFT: return DOWN_SOUTH_WEST_SHAPE;
+					case LOWER_BACK_RIGHT: return DOWN_SOUTH_EAST_SHAPE;
+					case UPPER_FRONT_LEFT: return UP_NORTH_WEST_SHAPE;
+					case UPPER_FRONT_RIGHT: return UP_NORTH_EAST_SHAPE;
+					case UPPER_BACK_LEFT: return UP_SOUTH_WEST_SHAPE;
+					case UPPER_BACK_RIGHT: return UP_SOUTH_EAST_SHAPE;
+				}
+			case SOUTH:
+				switch (state.get(PART)) {
+					case LOWER_FRONT_LEFT: return DOWN_SOUTH_EAST_SHAPE;
+					case LOWER_FRONT_RIGHT: return DOWN_SOUTH_WEST_SHAPE;
+					case LOWER_BACK_LEFT: return DOWN_NORTH_EAST_SHAPE;
+					case LOWER_BACK_RIGHT: return DOWN_NORTH_WEST_SHAPE;
+					case UPPER_FRONT_LEFT: return UP_SOUTH_EAST_SHAPE;
+					case UPPER_FRONT_RIGHT: return UP_SOUTH_WEST_SHAPE;
+					case UPPER_BACK_LEFT: return UP_NORTH_EAST_SHAPE;
+					case UPPER_BACK_RIGHT: return UP_NORTH_WEST_SHAPE;
+				}
+			case WEST:
+				switch (state.get(PART)) {
+					case LOWER_FRONT_LEFT: return DOWN_SOUTH_WEST_SHAPE;
+					case LOWER_FRONT_RIGHT: return DOWN_NORTH_WEST_SHAPE;
+					case LOWER_BACK_LEFT: return DOWN_SOUTH_EAST_SHAPE;
+					case LOWER_BACK_RIGHT: return DOWN_NORTH_EAST_SHAPE;
+					case UPPER_FRONT_LEFT: return UP_SOUTH_WEST_SHAPE;
+					case UPPER_FRONT_RIGHT: return UP_NORTH_WEST_SHAPE;
+					case UPPER_BACK_LEFT: return UP_SOUTH_EAST_SHAPE;
+					case UPPER_BACK_RIGHT: return UP_NORTH_EAST_SHAPE;
+				}
+			case EAST:
+				switch (state.get(PART)) {
+					case LOWER_FRONT_LEFT: return DOWN_NORTH_EAST_SHAPE;
+					case LOWER_FRONT_RIGHT: return DOWN_SOUTH_EAST_SHAPE;
+					case LOWER_BACK_LEFT: return DOWN_NORTH_WEST_SHAPE;
+					case LOWER_BACK_RIGHT: return DOWN_SOUTH_WEST_SHAPE;
+					case UPPER_FRONT_LEFT: return UP_NORTH_EAST_SHAPE;
+					case UPPER_FRONT_RIGHT: return UP_SOUTH_EAST_SHAPE;
+					case UPPER_BACK_LEFT: return UP_NORTH_WEST_SHAPE;
+					case UPPER_BACK_RIGHT: return UP_SOUTH_WEST_SHAPE;
+				}
+			default: return VoxelShapes.fullCube();
 		}
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		BlockPos blockPos = context.getPos();
-		Direction face = context.getPlacementHorizontalFacing().getOpposite();
+		BlockPos pos = context.getPos();
+		Direction face = context.getPlacementHorizontalFacing();
 		World world = context.getWorld();
 
-		if (blockPos.getY() < 255
-				&& world.getBlockState(blockPos.offset(face.rotateY())).isReplaceable(context)
-				&& world.getBlockState(blockPos.offset(face.getOpposite())).isReplaceable(context)
-				&& world.getBlockState(blockPos.offset(face.getOpposite()).offset(face.rotateY())).isReplaceable(context)
-				&& world.getBlockState(blockPos.up()).isReplaceable(context)
-				&& world.getBlockState(blockPos.up().offset(face.rotateY())).isReplaceable(context)
-				&& world.getBlockState(blockPos.up().offset(face.getOpposite())).isReplaceable(context)
-				&& world.getBlockState(blockPos.up().offset(face.getOpposite()).offset(face.rotateY())).isReplaceable(context)
+		if (pos.getY() < 255
+				&& world.getBlockState(pos.offset(face.rotateYCCW())).isReplaceable(context)
+				&& world.getBlockState(pos.offset(face)).isReplaceable(context)
+				&& world.getBlockState(pos.offset(face).offset(face.rotateYCCW())).isReplaceable(context)
+				&& world.getBlockState(pos.up()).isReplaceable(context)
+				&& world.getBlockState(pos.up().offset(face.rotateYCCW())).isReplaceable(context)
+				&& world.getBlockState(pos.up().offset(face)).isReplaceable(context)
+				&& world.getBlockState(pos.up().offset(face).offset(face.rotateYCCW())).isReplaceable(context)
 		) {
-			return this.getDefaultState()
-					.with(FACING_X, face == Direction.NORTH || face == Direction.EAST ? Direction.NORTH : Direction.SOUTH)
-					.with(FACING_Z, face == Direction.WEST || face == Direction.NORTH ? Direction.WEST : Direction.EAST);
+			return this.getDefaultState().with(HORIZONTAL_FACING, face.getOpposite());
 		}
 		return null;
+	}
+
+	@Override
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
+		Direction face = Optional.ofNullable(placer).map(Entity::getHorizontalFacing).orElse(Direction.NORTH);
+		worldIn.setBlockState(pos.offset(face.rotateYCCW()), state.with(PART, BumpkinPart.LOWER_FRONT_RIGHT));
+		worldIn.setBlockState(pos.offset(face), state.with(PART, BumpkinPart.LOWER_BACK_LEFT));
+		worldIn.setBlockState(pos.offset(face).offset(face.rotateYCCW()), state.with(PART, BumpkinPart.LOWER_BACK_RIGHT));
+		worldIn.setBlockState(pos.up(), state.with(PART, BumpkinPart.UPPER_FRONT_LEFT));
+		worldIn.setBlockState(pos.up().offset(face.rotateYCCW()), state.with(PART, BumpkinPart.UPPER_FRONT_RIGHT));
+		worldIn.setBlockState(pos.up().offset(face), state.with(PART, BumpkinPart.UPPER_BACK_LEFT));
+		worldIn.setBlockState(pos.up().offset(face).offset(face.rotateYCCW()), state.with(PART, BumpkinPart.UPPER_BACK_RIGHT));
+	}
+
+	@Override
+	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+		if (facing.getAxis() != Direction.Axis.Y) {
+			switch (stateIn.get(PART)) {
+				case LOWER_FRONT_LEFT:
+					if (worldIn.getBlockState(currentPos.offset(facing.rotateYCCW())).matchesBlock(this)
+							&& worldIn.getBlockState(currentPos.offset(facing)).matchesBlock(this)
+							&& worldIn.getBlockState(currentPos.offset(facing).offset(facing.rotateYCCW())).matchesBlock(this)
+							&& worldIn.getBlockState(currentPos.up()).matchesBlock(this)
+							&& worldIn.getBlockState(currentPos.up().offset(facing.rotateYCCW())).matchesBlock(this)
+							&& worldIn.getBlockState(currentPos.up().offset(facing)).matchesBlock(this)
+							&& worldIn.getBlockState(currentPos.up().offset(facing).offset(facing.rotateYCCW())).matchesBlock(this)
+					) {
+
+					}
+			}
+
+		}
+		return null;
+	}
+
+	@Override
+	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+		builder.add(PART, HORIZONTAL_FACING);
 	}
 }
