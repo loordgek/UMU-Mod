@@ -4,6 +4,7 @@ import io.github.zemelua.umumod.block.blockstateproperty.BumpkinPart;
 import io.github.zemelua.umumod.block.blockstateproperty.UMUBlockStateProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -20,7 +21,11 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class BumpkinBlock extends HorizontalBlock {
 	private static final EnumProperty<BumpkinPart> PART = UMUBlockStateProperties.BUMPKIN_PART;
@@ -64,6 +69,8 @@ public class BumpkinBlock extends HorizontalBlock {
 			Block.makeCuboidShape(10, 0, 0, 13, 5, 5),
 			Block.makeCuboidShape(0, 0, 0, 10, 5, 10)
 	);
+
+	public static final List<List<BlockPos>> BUMPKINS = new ArrayList<>();
 
 	public BumpkinBlock(Properties builder) {
 		super(builder);
@@ -153,27 +160,26 @@ public class BumpkinBlock extends HorizontalBlock {
 		worldIn.setBlockState(pos.up().offset(face.rotateYCCW()), state.with(PART, BumpkinPart.UPPER_FRONT_RIGHT));
 		worldIn.setBlockState(pos.up().offset(face), state.with(PART, BumpkinPart.UPPER_BACK_LEFT));
 		worldIn.setBlockState(pos.up().offset(face).offset(face.rotateYCCW()), state.with(PART, BumpkinPart.UPPER_BACK_RIGHT));
+
+		BUMPKINS.add(new ArrayList<>(Arrays.asList(
+				pos, pos.offset(face.rotateYCCW()), pos.offset(face), pos.offset(face).offset(face.rotateYCCW()), pos.up(),
+				pos.up().offset(face.rotateYCCW()), pos.up().offset(face), pos.up().offset(face).offset(face.rotateYCCW())
+		)));
 	}
 
 	@Override
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		if (facing.getAxis() != Direction.Axis.Y) {
-			switch (stateIn.get(PART)) {
-				case LOWER_FRONT_LEFT:
-					if (worldIn.getBlockState(currentPos.offset(facing.rotateYCCW())).matchesBlock(this)
-							&& worldIn.getBlockState(currentPos.offset(facing)).matchesBlock(this)
-							&& worldIn.getBlockState(currentPos.offset(facing).offset(facing.rotateYCCW())).matchesBlock(this)
-							&& worldIn.getBlockState(currentPos.up()).matchesBlock(this)
-							&& worldIn.getBlockState(currentPos.up().offset(facing.rotateYCCW())).matchesBlock(this)
-							&& worldIn.getBlockState(currentPos.up().offset(facing)).matchesBlock(this)
-							&& worldIn.getBlockState(currentPos.up().offset(facing).offset(facing.rotateYCCW())).matchesBlock(this)
-					) {
-
-					}
+		for (List<BlockPos> parts : BUMPKINS) {
+			if (parts.contains(currentPos)) {
+				if (parts.stream().map(i -> worldIn.getBlockState(i).matchesBlock(this)).collect(Collectors.toList()).contains(false)) {
+					//parts.stream().forEach(i -> worldIn.setBlockState(i, Blocks.AIR.getDefaultState(), 3));
+					parts.remove(currentPos);
+					if (parts.isEmpty()) BUMPKINS.remove(parts);
+					return Blocks.AIR.getDefaultState();
+				}
 			}
-
 		}
-		return null;
+		return stateIn;
 	}
 
 	@Override
