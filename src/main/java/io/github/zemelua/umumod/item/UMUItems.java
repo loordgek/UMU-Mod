@@ -36,8 +36,25 @@ public class UMUItems {
 	public static final RegistryObject<Item> ACACIA_VERTICAL_SLAB = ITEMS.register("acacia_vertical_slab", () -> new BlockItem(UMUBlocks.ACACIA_VERTICAL_SLAB.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> DARK_OAK_VERTICAL_SLAB = ITEMS.register("dark_oak_vertical_slab", () -> new BlockItem(UMUBlocks.DARK_OAK_VERTICAL_SLAB.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 
+	public static final RegistryObject<Item> WHITE_WOODEN_DOOR = ITEMS.register("white_wooden_door", () -> new BlockItem(UMUBlocks.WHITE_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> ORANGE_WOODEN_DOOR = ITEMS.register("orange_wooden_door", () -> new BlockItem(UMUBlocks.ORANGE_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> MAGENTA_WOODEN_DOOR = ITEMS.register("magenta_wooden_door", () -> new BlockItem(UMUBlocks.MAGENTA_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> LIGHT_BLUE_WOODEN_DOOR = ITEMS.register("light_blue_wooden_door", () -> new BlockItem(UMUBlocks.LIGHT_BLUE_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> YELLOW_WOODEN_DOOR = ITEMS.register("yellow_wooden_door", () -> new BlockItem(UMUBlocks.YELLOW_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> LIME_WOODEN_DOOR = ITEMS.register("lime_wooden_door", () -> new BlockItem(UMUBlocks.LIME_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> PINK_WOODEN_DOOR = ITEMS.register("pink_wooden_door", () -> new BlockItem(UMUBlocks.PINK_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> GRAY_WOODEN_DOOR = ITEMS.register("gray_wooden_door", () -> new BlockItem(UMUBlocks.GRAY_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> LIGHT_GRAY_WOODEN_DOOR = ITEMS.register("light_gray_wooden_door", () -> new BlockItem(UMUBlocks.LIGHT_GRAY_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> CYAN_WOODEN_DOOR = ITEMS.register("cyan_wooden_door", () -> new BlockItem(UMUBlocks.CYAN_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> PURPLE_WOODEN_DOOR = ITEMS.register("purple_wooden_door", () -> new BlockItem(UMUBlocks.PURPLE_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> BLUE_WOODEN_DOOR = ITEMS.register("blue_wooden_door", () -> new BlockItem(UMUBlocks.BLUE_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> BROWN_WOODEN_DOOR = ITEMS.register("brown_wooden_door", () -> new BlockItem(UMUBlocks.BROWN_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> GREEN_WOODEN_DOOR = ITEMS.register("green_wooden_door", () -> new BlockItem(UMUBlocks.GREEN_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> RED_WOODEN_DOOR = ITEMS.register("red_wooden_door", () -> new BlockItem(UMUBlocks.RED_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> BLACK_WOODEN_DOOR = ITEMS.register("black_wooden_door", () -> new BlockItem(UMUBlocks.BLACK_WOODEN_DOOR.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+
 	public static final RegistryObject<Item> WOODEN_BOX = ITEMS.register("wooden_box", () -> new BlockItem(UMUBlocks.WOODEN_BOX.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 	public static final RegistryObject<Item> QUARTZ_COLUMN = ITEMS.register("quartz_column", () -> new BlockItem(UMUBlocks.QUARTZ_COLUMN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
-	public static final RegistryObject<Item> BUMPKIN = ITEMS.register("bumpkin", () -> new BlockItem(UMUBlocks.BUMPKIN.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
+	// public static final RegistryObject<Item> BUMPKIN = ITEMS.register("bumpkin", () -> new BlockItem(UMUBlocks.BUMPKIN.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 }

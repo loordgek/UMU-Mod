@@ -4,6 +4,7 @@ import io.github.zemelua.umumod.UMUMod;
 import io.github.zemelua.umumod.block.blockstateproperty.ColumnBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.DoorBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -38,8 +39,25 @@ public class UMUBlocks {
 	public static final RegistryObject<Block> ACACIA_VERTICAL_SLAB = BLOCKS.register("acacia_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.ADOBE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> DARK_OAK_VERTICAL_SLAB = BLOCKS.register("dark_oak_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
 
+	public static final RegistryObject<Block> WHITE_WOODEN_DOOR = BLOCKS.register("white_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, WHITE_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> ORANGE_WOODEN_DOOR = BLOCKS.register("orange_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, ORANGE_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> MAGENTA_WOODEN_DOOR = BLOCKS.register("magenta_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, MAGENTA_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> LIGHT_BLUE_WOODEN_DOOR = BLOCKS.register("light_blue_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, LIGHT_BLUE_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> YELLOW_WOODEN_DOOR = BLOCKS.register("yellow_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, YELLOW_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> LIME_WOODEN_DOOR = BLOCKS.register("lime_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, LIME_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> PINK_WOODEN_DOOR = BLOCKS.register("pink_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, PINK_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> GRAY_WOODEN_DOOR = BLOCKS.register("gray_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, GRAY_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> LIGHT_GRAY_WOODEN_DOOR = BLOCKS.register("light_gray_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, LIGHT_GRAY_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> CYAN_WOODEN_DOOR = BLOCKS.register("cyan_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, CYAN_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> PURPLE_WOODEN_DOOR = BLOCKS.register("purple_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, PURPLE_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> BLUE_WOODEN_DOOR = BLOCKS.register("blue_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, BLUE_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> BROWN_WOODEN_DOOR = BLOCKS.register("brown_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, BROWN_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> GREEN_WOODEN_DOOR = BLOCKS.register("green_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, GREEN_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> RED_WOODEN_DOOR = BLOCKS.register("red_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, RED_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+	public static final RegistryObject<Block> BLACK_WOODEN_DOOR = BLOCKS.register("black_wooden_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD, BLACK_PLANKS.get().getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+
 	public static final RegistryObject<Block> WOODEN_BOX = BLOCKS.register("wooden_box", () -> new WoodenBoxBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(4.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> QUARTZ_COLUMN = BLOCKS.register("quartz_column", () -> new ColumnBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
 
-	public static final RegistryObject<Block> BUMPKIN = BLOCKS.register("bumpkin", () -> new BumpkinBlock(AbstractBlock.Properties.create(Material.GOURD, MaterialColor.ADOBE).hardnessAndResistance(1.5F).sound(SoundType.WOOD)));
+	// public static final RegistryObject<Block> BUMPKIN = BLOCKS.register("bumpkin", () -> new BumpkinBlock(AbstractBlock.Properties.create(Material.GOURD, MaterialColor.ADOBE).hardnessAndResistance(1.5F).sound(SoundType.WOOD)));
 }
