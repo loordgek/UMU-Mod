@@ -169,9 +169,10 @@ public class BumpkinBlock extends HorizontalBlock {
 
 	@Override
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		for (List<BlockPos> parts : BUMPKINS) {
+		for (int i = 0; i < BUMPKINS.size(); i++) {
+			List<BlockPos> parts = BUMPKINS.get(i);
 			if (parts.contains(currentPos)) {
-				if (parts.stream().map(i -> worldIn.getBlockState(i).matchesBlock(this)).collect(Collectors.toList()).contains(false)) {
+				if (parts.stream().map(p -> worldIn.getBlockState(p).matchesBlock(this)).collect(Collectors.toList()).contains(false)) {
 					//parts.stream().forEach(i -> worldIn.setBlockState(i, Blocks.AIR.getDefaultState(), 3));
 					parts.remove(currentPos);
 					if (parts.isEmpty()) BUMPKINS.remove(parts);
