@@ -5,6 +5,8 @@ import io.github.zemelua.umumod.client.renderer.model.UMUModelLoaders;
 import io.github.zemelua.umumod.item.UMUItems;
 import io.github.zemelua.umumod.tileentity.UMUTileEntities;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -57,6 +59,8 @@ public class UMUMod {
 	private void doClientStuff(final FMLClientSetupEvent event) {
 		// do something that can only be done on the client
 		LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
+
+		RenderTypeLookup.setRenderLayer(UMUBlocks.SAKURA_DOOR.get(), RenderType.getCutout());
 	}
 
 	private void enqueueIMC(final InterModEnqueueEvent event) {

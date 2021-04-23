@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/leaves",
+	"textures": {
+		"all": "umu:block/sakura_leaves"
+	}
+}
