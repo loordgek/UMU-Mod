@@ -17,7 +17,7 @@ public class UMUItemGroups {
 	public static final ItemGroup DECORATIONS = new ItemGroup("decorations") {
 		@Override
 		public ItemStack createIcon() {
-			return new ItemStack(UMUItems.SAKURA_SAPLING.get());
+			return new ItemStack(UMUItems.SAKURA_PLANKS.get());
 		}
 	};
 	public static final ItemGroup FURNITURE = new ItemGroup("furniture") {

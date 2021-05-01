@@ -44,6 +44,7 @@ public class UMUMod {
 		UMUItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		UMUTileEntities.TILE_ENTITY.register(FMLJavaModLoadingContext.get().getModEventBus());
 
+		FMLJavaModLoadingContext.get().getModEventBus().register(UMUBlocks.class);
 		FMLJavaModLoadingContext.get().getModEventBus().register(UMUModelLoaders.class);
 
 		// Register ourselves for server and other game events we are interested in
