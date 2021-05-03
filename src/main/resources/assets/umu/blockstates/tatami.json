@@ -1,0 +1,9 @@
+{
+	"variants": {
+		"facing=north": { "model": "umu:block/tatami_north" },
+		"facing=south": { "model": "umu:block/tatami_south" },
+		"facing=west":  { "model": "umu:block/tatami_west" },
+		"facing=east":  { "model": "umu:block/tatami_east" },
+		"facing=down":  { "model": "umu:block/tatami_horizontal" }
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"parent": "umu:block/tatami",
+	"textures": {
+		"bottom": "umu:block/tatami_west",
+		"top": "umu:block/tatami_east",
+		"north": "umu:block/tatami_side",
+		"south": "umu:block/tatami_side",
+		"west": "umu:block/tatami_side",
+		"east": "umu:block/tatami_front"
+	}
+}

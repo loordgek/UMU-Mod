@@ -51,6 +51,7 @@ public class UMUItems {
 	public static final RegistryObject<Item> DARK_OAK_VERTICAL_SLAB = ITEMS.register("dark_oak_vertical_slab", () -> new BlockItem(UMUBlocks.DARK_OAK_VERTICAL_SLAB.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 
 	public static final RegistryObject<Item> TATAMI = ITEMS.register("tatami", () -> new BlockItem(UMUBlocks.TATAMI.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
+	public static final RegistryObject<Item> SHOJI = ITEMS.register("shoji", () -> new BlockItem(UMUBlocks.SHOJI.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
 
 	public static final RegistryObject<Item> WOODEN_BOX = ITEMS.register("wooden_box", () -> new BlockItem(UMUBlocks.WOODEN_BOX.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 	public static final RegistryObject<Item> QUARTZ_COLUMN = ITEMS.register("quartz_column", () -> new BlockItem(UMUBlocks.QUARTZ_COLUMN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
