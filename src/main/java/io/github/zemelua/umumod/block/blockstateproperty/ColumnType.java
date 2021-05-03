@@ -3,7 +3,7 @@ package io.github.zemelua.umumod.block.blockstateproperty;
 import net.minecraft.util.IStringSerializable;
 
 public enum ColumnType implements IStringSerializable {
-	TOP("top"),
+	TOP   ("top"),
 	MIDDLE("middle"),
 	BOTTOM("bottom");
 
