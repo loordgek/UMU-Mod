@@ -1,0 +1,7 @@
+{
+	"parent": "umu:block/sliding_door_top_rh",
+	"textures": {
+		"top": "umu:block/shoji_top",
+		"bottom": "umu:block/shoji_bottom"
+	}
+}

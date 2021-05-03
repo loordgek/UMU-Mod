@@ -15,14 +15,14 @@ public class SlidingDoorBlock extends DoorBlock {
 	private static final VoxelShape NORTH_CLOSE = Block.makeCuboidShape(0.0D, 0.0D, 8.0D, 16.0D, 16.0D, 11.0D);
 	private static final VoxelShape WEST_CLOSE = Block.makeCuboidShape(8.0D, 0.0D, 0.0D, 11.0D, 16.0D, 16.0D);
 	private static final VoxelShape EAST_CLOSE = Block.makeCuboidShape(5.0D, 0.0D, 0.0D, 8.0D, 16.0D, 16.0D);
-	private static final VoxelShape SOUTH_OPEN_LEFT = Block.makeCuboidShape(11.0D, 0.0D, 5.0D, 27.0D, 16.0D, 8.0D);
-	private static final VoxelShape NORTH_OPEN_LEFT = Block.makeCuboidShape(-11.0D, 0.0D, 8.0D, 5.0D, 16.0D, 11.0D);
-	private static final VoxelShape WEST_OPEN_LEFT = Block.makeCuboidShape(8.0D, 0.0D, -11.0D, 11.0D, 16.0D, 5.0D);
-	private static final VoxelShape EAST_OPEN_LEFT = Block.makeCuboidShape(5.0D, 0.0D, 11.0D, 8.0D, 16.0D, 27.0D);
-	private static final VoxelShape SOUTH_OPEN_RIGHT = Block.makeCuboidShape(-11.0D, 0.0D, 5.0D, 5.0D, 16.0D, 8.0D);
-	private static final VoxelShape NORTH_OPEN_RIGHT = Block.makeCuboidShape(11.0D, 0.0D, 8.0D, 27.0D, 16.0D, 11.0D);
-	private static final VoxelShape WEST_OPEN_RIGHT = Block.makeCuboidShape(8.0D, 0.0D, 11.0D, 11.0D, 16.0D, 27.0D);
-	private static final VoxelShape EAST_OPEN_RIGHT = Block.makeCuboidShape(5.0D, 0.0D, -11.0D, 8.0D, 16.0D, 5.0D);
+	private static final VoxelShape SOUTH_OPEN_LEFT = Block.makeCuboidShape(-11.0D, 0.0D, 5.0D, 5.0D, 16.0D, 8.0D);
+	private static final VoxelShape NORTH_OPEN_LEFT = Block.makeCuboidShape(11.0D, 0.0D, 8.0D, 27.0D, 16.0D, 11.0D);
+	private static final VoxelShape WEST_OPEN_LEFT = Block.makeCuboidShape(8.0D, 0.0D, 11.0D, 11.0D, 16.0D, 27.0D);
+	private static final VoxelShape EAST_OPEN_LEFT = Block.makeCuboidShape(5.0D, 0.0D, -11.0D, 8.0D, 16.0D, 5.0D);
+	private static final VoxelShape SOUTH_OPEN_RIGHT = Block.makeCuboidShape(11.0D, 0.0D, 5.0D, 27.0D, 16.0D, 8.0D);
+	private static final VoxelShape NORTH_OPEN_RIGHT = Block.makeCuboidShape(-11.0D, 0.0D, 8.0D, 5.0D, 16.0D, 11.0D);
+	private static final VoxelShape WEST_OPEN_RIGHT = Block.makeCuboidShape(8.0D, 0.0D, -11.0D, 11.0D, 16.0D, 5.0D);
+	private static final VoxelShape EAST_OPEN_RIGHT = Block.makeCuboidShape(5.0D, 0.0D, 11.0D, 8.0D, 16.0D, 27.0D);
 
 	public SlidingDoorBlock(Properties builder) {
 		super(builder);
@@ -51,8 +51,8 @@ public class SlidingDoorBlock extends DoorBlock {
 	@Nullable
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		BlockPos blockpos = context.getPos();
-		if (blockpos.getY() < 255 && context.getWorld().getBlockState(blockpos.up()).isReplaceable(context)) {
+		BlockPos blockPos = context.getPos();
+		if (blockPos.getY() < 255 && context.getWorld().getBlockState(blockpos.up()).isReplaceable(context)) {
 			World world = context.getWorld();
 			boolean isPowered = world.isBlockPowered(blockpos) || world.isBlockPowered(blockpos.up());
 			Pair<Direction, DoorHingeSide> facingAndHinge = this.getFacingAndHinge(context);
