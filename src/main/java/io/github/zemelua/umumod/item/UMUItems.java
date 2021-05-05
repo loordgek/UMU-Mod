@@ -43,6 +43,8 @@ public class UMUItems {
 	public static final RegistryObject<Item> SAKURA_SIGN = ITEMS.register("sakura_sign", () -> new SignItem(new Item.Properties().maxStackSize(16).group(ItemGroup.DECORATIONS), UMUBlocks.SAKURA_SIGN.get(), UMUBlocks.SAKURA_WALL_SIGN.get()));
 	public static final RegistryObject<Item> ASH_SIGN = ITEMS.register("ash_sign", () -> new SignItem(new Item.Properties().maxStackSize(16).group(ItemGroup.DECORATIONS), UMUBlocks.ASH_SIGN.get(), UMUBlocks.ASH_WALL_SIGN.get()));
 
+	public static final RegistryObject<Item> OAK_POST = ITEMS.register("oak_post", () -> new BlockItem(UMUBlocks.OAK_POST.get(), new Item.Properties().group(UMUItemGroups.DECORATIONS)));
+
 	public static final RegistryObject<Item> OAK_VERTICAL_SLAB = ITEMS.register("oak_vertical_slab", () -> new BlockItem(UMUBlocks.OAK_VERTICAL_SLAB.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> SPRUCE_VERTICAL_SLAB = ITEMS.register("spruce_vertical_slab", () -> new BlockItem(UMUBlocks.SPRUCE_VERTICAL_SLAB.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> BIRCH_VERTICAL_SLAB = ITEMS.register("birch_vertical_slab", () -> new BlockItem(UMUBlocks.BIRCH_VERTICAL_SLAB.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
@@ -53,6 +55,7 @@ public class UMUItems {
 	public static final RegistryObject<Item> TATAMI = ITEMS.register("tatami", () -> new BlockItem(UMUBlocks.TATAMI.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
 	public static final RegistryObject<Item> SHOJI = ITEMS.register("shoji", () -> new BlockItem(UMUBlocks.SHOJI.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
 
+	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_POSITIVE = ITEMS.register("plaster_half_timber_positive", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_POSITIVE.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> WOODEN_BOX = ITEMS.register("wooden_box", () -> new BlockItem(UMUBlocks.WOODEN_BOX.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 	public static final RegistryObject<Item> QUARTZ_COLUMN = ITEMS.register("quartz_column", () -> new BlockItem(UMUBlocks.QUARTZ_COLUMN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 

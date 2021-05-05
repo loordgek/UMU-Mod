@@ -58,6 +58,8 @@ public class UMUBlocks {
 	public static final RegistryObject<Block> SAKURA_WALL_SIGN = BLOCKS.register("sakura_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(SAKURA_SIGN), UMUWoodType.SAKURA));
 	public static final RegistryObject<Block> ASH_WALL_SIGN = BLOCKS.register("ash_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(ASH_SIGN), UMUWoodType.ASH));
 
+	public static final RegistryObject<Block> OAK_POST = BLOCKS.register("oak_post", () -> new PostBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
+
 	public static final RegistryObject<Block> OAK_VERTICAL_SLAB = BLOCKS.register("oak_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> SPRUCE_VERTICAL_SLAB = BLOCKS.register("spruce_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> BIRCH_VERTICAL_SLAB = BLOCKS.register("birch_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.SAND).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
@@ -70,6 +72,10 @@ public class UMUBlocks {
 	public static final RegistryObject<Block> KOSHITSUKI_SHOJI = BLOCKS.register("koshitsuki_shoji", () -> new SlidingDoorBlock(AbstractBlock.Properties.from(Blocks.OAK_DOOR)));
 	public static final RegistryObject<Block> YUKIMI_SHOJI = BLOCKS.register("yukimi_shoji", () -> new SlidingDoorBlock(AbstractBlock.Properties.from(Blocks.OAK_DOOR)));
 	public static final RegistryObject<Block> FUSUMA = BLOCKS.register("fusuma", () -> new SlidingDoorBlock(AbstractBlock.Properties.from(Blocks.OAK_DOOR)));
+
+	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_NONE = BLOCKS.register("plaster_half_timber_positive", () -> new Block(null));
+	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_POSITIVE = BLOCKS.register("plaster_half_timber_positive", () -> new Block(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BROWN_TERRACOTTA).hardnessAndResistance(1.8F, 6.0F).sound(SoundType.STONE)));
+
 
 	public static final RegistryObject<Block> WOODEN_BOX = BLOCKS.register("wooden_box", () -> new WoodenBoxBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(4.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> QUARTZ_COLUMN = BLOCKS.register("quartz_column", () -> new ColumnBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));

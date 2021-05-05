@@ -65,14 +65,21 @@ public class RandomConnection implements IConnection {
 		public RandomConnection deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
 			JsonObject jsonObject = jsonElement.getAsJsonObject();
 
-			ImmutableList.Builder<Element> randoms = new ImmutableList.Builder<>();
+			ImmutableList.Builder<Element> randoms = ImmutableList.builder();
 			if (jsonObject.has("random")) {
-				for (JsonElement randomElement : jsonObject.get("random").getAsJsonArray()) {
+				ImmutableList.Builder<JsonElement> randomElements = ImmutableList.builder();
+				try {
+					randomElements.add(jsonObject.get("random").getAsJsonObject());
+				} catch (IllegalStateException exception) {
+					randomElements.addAll(jsonObject.get("random").getAsJsonArray());
+				}
+
+				for (JsonElement randomElement : randomElements.build()) {
 					JsonObject randomObject = randomElement.getAsJsonObject();
 					int frequency = 0;
 					ResourceLocation texture = MissingTextureSprite.getLocation();
-					if (randomObject.has("frequency")) {
-						frequency = randomObject.get("frequency").getAsInt();
+					if (randomObject.has("weight")) {
+						frequency = randomObject.get("weight").getAsInt();
 					}
 					if (randomObject.has("texture")) {
 						texture = ResourceLocation.tryCreate(randomObject.get("texture").getAsString());

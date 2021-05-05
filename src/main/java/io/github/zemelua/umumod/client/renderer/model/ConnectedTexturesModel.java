@@ -134,7 +134,10 @@ public class ConnectedTexturesModel implements IModelGeometry<ConnectedTexturesM
 					} else {
 						if (extraData.hasProperty(CONNECTION_DATA)) {
 							ConnectionData connectionData = extraData.getData(CONNECTION_DATA);
-							sprite = resolveConnection(blockpartface.texture).makeTexture(connectionData.getWorld(), connectionData.getPos(), state, direction, sprite);
+							IConnection connection = resolveConnection(blockpartface.texture);
+							if (connection != null) {
+								sprite = connection.makeTexture(connectionData.getWorld(), connectionData.getPos(), state, direction, sprite);
+							}
 						}
 						builder.addFaceQuad(
 							Direction.rotateFace(modelTransform.getRotation().getMatrix(), blockpartface.cullFace),

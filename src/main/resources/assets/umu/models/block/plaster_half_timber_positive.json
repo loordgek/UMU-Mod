@@ -1,0 +1,96 @@
+{
+	"loader": "umu:connected-textures",
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "umu:block/plaster_half_timber_cross",
+		"side": "umu:block/plaster_half_timber_positive_1"
+	},
+	"connections": {
+		"side": {
+			"type": "tile",
+			"elements": [
+				{
+					"size": [ 1, 1 ],
+					"textures": [
+						"umu:block/plaster_half_timber_positive_1"
+					]
+				},
+				{
+					"size": [ 1, 2 ],
+					"textures": [
+						"umu:block/plaster_half_timber_positive_2",
+						"umu:block/plaster_half_timber_positive_3"
+					]
+				},
+				{
+					"size": [ 1, 3 ],
+					"textures": [
+						"umu:block/plaster_half_timber_positive_4",
+						"umu:block/plaster_half_timber_positive_5",
+						"umu:block/plaster_half_timber_positive_6"
+					]
+				},
+				{
+					"size": [ 2, 1 ],
+					"textures": [
+						"umu:block/plaster_half_timber_positive_7",
+						"umu:block/plaster_half_timber_positive_8"
+					]
+				},
+				{
+					"size": [ 2, 2 ],
+					"textures": [
+						"umu:block/plaster_half_timber_positive_9",
+						"umu:block/plaster_half_timber_positive_10",
+						"umu:block/plaster_half_timber_positive_11",
+						"umu:block/plaster_half_timber_positive_12"
+					]
+				},
+				{
+					"size": [ 2, 3 ],
+					"textures": [
+						"umu:block/plaster_half_timber_none_7",
+						"umu:block/plaster_half_timber_none_11",
+						"umu:block/plaster_half_timber_none_8",
+						"umu:block/plaster_half_timber_none_9",
+						"umu:block/plaster_half_timber_none_12",
+						"umu:block/plaster_half_timber_none_10"
+					]
+				},
+				{
+					"size": [ 3, 1 ],
+					"textures": [
+						"umu:block/plaster_half_timber_none_5",
+						"umu:block/plaster_half_timber_none_13",
+						"umu:block/plaster_half_timber_none_6"
+					]
+				},
+				{
+					"size": [ 3, 2 ],
+					"textures": [
+						"umu:block/plaster_half_timber_none_7",
+						"umu:block/plaster_half_timber_none_8",
+						"umu:block/plaster_half_timber_none_14",
+						"umu:block/plaster_half_timber_none_15",
+						"umu:block/plaster_half_timber_none_9",
+						"umu:block/plaster_half_timber_none_10"
+					]
+				},
+				{
+					"size": [ 3, 3 ],
+					"textures": [
+						"umu:block/plaster_half_timber_none_7",
+						"umu:block/plaster_half_timber_none_11",
+						"umu:block/plaster_half_timber_none_8",
+						"umu:block/plaster_half_timber_none_14",
+						"umu:block/plaster_block",
+						"umu:block/plaster_half_timber_none_15",
+						"umu:block/plaster_half_timber_none_9",
+						"umu:block/plaster_half_timber_none_12",
+						"umu:block/plaster_half_timber_none_10"
+					]
+				}
+			]
+		}
+	}
+}

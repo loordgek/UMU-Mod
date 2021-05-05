@@ -10,6 +10,7 @@ public class UMUBlockStateProperties {
 	public static final DirectionProperty FACING_Z = DirectionProperty.create("facing_z", Direction.WEST, Direction.EAST);
 
 	public static final EnumProperty<VerticalSlabType> VERTICAL_SLAB_TYPE = EnumProperty.create("type", VerticalSlabType.class);
+	public static final EnumProperty<PostType> POST_TYPE = EnumProperty.create("type", PostType.class);
 	public static final EnumProperty<ColumnType> COLUMN_TYPE = EnumProperty.create("type", ColumnType.class);
 	public static final EnumProperty<BumpkinPart> BUMPKIN_PART = EnumProperty.create("part", BumpkinPart.class);
 }

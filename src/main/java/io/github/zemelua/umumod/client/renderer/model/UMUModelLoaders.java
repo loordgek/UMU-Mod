@@ -6,6 +6,7 @@ import io.github.zemelua.umumod.UMUMod;
 import io.github.zemelua.umumod.client.renderer.model.connection.FlexibleConnection;
 import io.github.zemelua.umumod.client.renderer.model.connection.IConnection;
 import io.github.zemelua.umumod.client.renderer.model.connection.RandomConnection;
+import io.github.zemelua.umumod.client.renderer.model.connection.TileConnection;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
@@ -15,6 +16,7 @@ public class UMUModelLoaders {
 	public static final Gson INSTANCE = new GsonBuilder()
 			.registerTypeAdapter(IConnection.class, new IConnection.Deserializer())
 			.registerTypeAdapter(FlexibleConnection.class, new FlexibleConnection.Deserializer())
+			.registerTypeAdapter(TileConnection.class, new TileConnection.Deserializer())
 			.registerTypeAdapter(RandomConnection.class, new RandomConnection.Deserializer())
 			.create();
 
