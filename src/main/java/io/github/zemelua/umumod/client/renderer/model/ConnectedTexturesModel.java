@@ -66,8 +66,6 @@ public class ConnectedTexturesModel implements IModelGeometry<ConnectedTexturesM
 		private final IModelTransform modelTransform;
 		private final ResourceLocation modelLocation;
 
-		private static final ModelProperty<ConnectionData> CONNECTION_DATA = new ModelProperty<>();
-
 		private static final FaceBakery FACE_BAKERY = new FaceBakery();
 
 		public BakedModel(BlockModel baseModel, IBakedModel baseModelBaked, Map<String, IConnection> connections, ImmutableMap<ItemCameraTransforms.TransformType, TransformationMatrix> cameraTransforms, IModelTransform modelTransform, ResourceLocation modelLocation) {
@@ -115,6 +113,8 @@ public class ConnectedTexturesModel implements IModelGeometry<ConnectedTexturesM
 		private static BakedQuad bakeFace(BlockPart partIn, BlockPartFace partFaceIn, TextureAtlasSprite spriteIn, Direction directionIn, IModelTransform transformIn, ResourceLocation locationIn) {
 			return FACE_BAKERY.bakeQuad(partIn.positionFrom, partIn.positionTo, partFaceIn, spriteIn, directionIn, transformIn, partIn.partRotation, partIn.shade, locationIn);
 		}
+
+		private static final ModelProperty<ConnectionData> CONNECTION_DATA = new ModelProperty<>();
 
 		@Nonnull
 		@Override
@@ -218,4 +218,38 @@ public class ConnectedTexturesModel implements IModelGeometry<ConnectedTexturesM
 			return new ConnectedTexturesModel(baseModel, connections);
 		}
 	}
+
+	/*
+
+	public static class ConnectionData extends ModelDataMap {
+		public static final ModelProperty<ConnectionData> CONNECTION_DATA = new ModelProperty<>();
+		public static final Map<BlockPos, ConnectionData> CONNECTION_DATA_MAP = new HashMap<>();
+
+		public static ConnectionData get(BlockPos pos) {
+			return CONNECTION_DATA_MAP.get(pos);
+		}
+
+		@Override
+		public boolean hasProperty(ModelProperty<?> prop) {
+			return prop == CONNECTION_DATA || super.hasProperty(prop);
+		}
+
+		@SuppressWarnings("unchecked")
+		@Override
+		public <T> T getData(ModelProperty<T> prop) {
+			if (prop == CONNECTION_DATA) {
+				return (T) this;
+			}
+			return super.getData(prop);
+		}
+
+		public void setData(BlockPos pos, ModelProperty<ConnectionData> prop, ConnectionData data) {
+			CONNECTION_DATA_MAP.put(pos, data);
+			super.setData(prop, data);
+		}
+	}
+
+	 */
+
+
 }

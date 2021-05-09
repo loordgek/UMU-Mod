@@ -7,6 +7,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+@SuppressWarnings("unused")
 public class UMUItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, UMUMod.MODID);
 
@@ -55,7 +56,13 @@ public class UMUItems {
 	public static final RegistryObject<Item> TATAMI = ITEMS.register("tatami", () -> new BlockItem(UMUBlocks.TATAMI.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
 	public static final RegistryObject<Item> SHOJI = ITEMS.register("shoji", () -> new BlockItem(UMUBlocks.SHOJI.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
 
+	public static final RegistryObject<Item> PLASTER = ITEMS.register("plaster", () -> new BlockItem(UMUBlocks.PLASTER.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
+	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_NONE = ITEMS.register("plaster_half_timber_none", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_NONE.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_POSITIVE = ITEMS.register("plaster_half_timber_positive", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_POSITIVE.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
+	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_NEGATIVE = ITEMS.register("plaster_half_timber_negative", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_NEGATIVE.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
+	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_CROSS = ITEMS.register("plaster_half_timber_cross", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_CROSS.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
+	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_PATTERN_FLOWER = ITEMS.register("plaster_half_timber_pattern_flower", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_PATTERN_FLOWER.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
+
 	public static final RegistryObject<Item> WOODEN_BOX = ITEMS.register("wooden_box", () -> new BlockItem(UMUBlocks.WOODEN_BOX.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 	public static final RegistryObject<Item> QUARTZ_COLUMN = ITEMS.register("quartz_column", () -> new BlockItem(UMUBlocks.QUARTZ_COLUMN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 

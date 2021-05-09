@@ -73,9 +73,12 @@ public class UMUBlocks {
 	public static final RegistryObject<Block> YUKIMI_SHOJI = BLOCKS.register("yukimi_shoji", () -> new SlidingDoorBlock(AbstractBlock.Properties.from(Blocks.OAK_DOOR)));
 	public static final RegistryObject<Block> FUSUMA = BLOCKS.register("fusuma", () -> new SlidingDoorBlock(AbstractBlock.Properties.from(Blocks.OAK_DOOR)));
 
-	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_NONE = BLOCKS.register("plaster_half_timber_positive", () -> new Block(null));
-	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_POSITIVE = BLOCKS.register("plaster_half_timber_positive", () -> new Block(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BROWN_TERRACOTTA).hardnessAndResistance(1.8F, 6.0F).sound(SoundType.STONE)));
-
+	public static final RegistryObject<Block> PLASTER = BLOCKS.register("plaster", () -> new Block(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(1.8F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_NONE = BLOCKS.register("plaster_half_timber_none", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BROWN).hardnessAndResistance(1.8F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_POSITIVE = BLOCKS.register("plaster_half_timber_positive", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.from(PLASTER_HALF_TIMBER_NONE.get())));
+	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_NEGATIVE = BLOCKS.register("plaster_half_timber_negative", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.from(PLASTER_HALF_TIMBER_NONE.get())));
+	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_CROSS = BLOCKS.register("plaster_half_timber_cross", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.from(PLASTER_HALF_TIMBER_NONE.get())));
+	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_PATTERN_FLOWER = BLOCKS.register("plaster_half_timber_pattern_flower", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.from(PLASTER_HALF_TIMBER_NONE.get())));
 
 	public static final RegistryObject<Block> WOODEN_BOX = BLOCKS.register("wooden_box", () -> new WoodenBoxBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(4.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> QUARTZ_COLUMN = BLOCKS.register("quartz_column", () -> new ColumnBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));

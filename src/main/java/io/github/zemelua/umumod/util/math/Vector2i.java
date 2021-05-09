@@ -11,12 +11,18 @@ public class Vector2i {
 	public static final Vector2i NEGATIVE_UNIT_Y = new Vector2i(0, -1);
 	public static final Vector2i MAX = new Vector2i(Integer.MAX_VALUE, Integer.MAX_VALUE);
 	public static final Vector2i MIN = new Vector2i(Integer.MIN_VALUE, Integer.MIN_VALUE);
-	public final int x;
-	public final int y;
+	public int x;
+	public int y;
 
 	public Vector2i(int xIn, int yIn) {
 		this.x = xIn;
 		this.y = yIn;
+	}
+
+	public Vector2i subtract(int x, int y) {
+		this.x -= x;
+		this.y -= y;
+		return this;
 	}
 
 	@Override
