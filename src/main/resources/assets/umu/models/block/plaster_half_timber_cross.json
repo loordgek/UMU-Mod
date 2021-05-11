@@ -1,0 +1,114 @@
+{
+	"loader": "umu:connected-textures",
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "umu:block/plaster_half_timber_cross",
+		"side": "umu:block/plaster_half_timber_cross_1"
+	},
+	"connections": {
+		"side": {
+			"type": "tile",
+			"elements": [
+				{
+					"size": [ 1, 1 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_cross_1"
+					]
+				},
+				{
+					"size": [ 1, 2 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_cross_2",
+						"umu:block/plaster_half_timber_cross_3"
+					]
+				},
+				{
+					"size": [ 1, 3 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_cross_4",
+						"umu:block/plaster_half_timber_cross_5",
+						"umu:block/plaster_half_timber_cross_6"
+					]
+				},
+				{
+					"size": [ 2, 1 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_cross_7",
+						"umu:block/plaster_half_timber_cross_8"
+					]
+				},
+				{
+					"size": [ 2, 2 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_positive_9",
+						"umu:block/plaster_half_timber_negative_10",
+						"umu:block/plaster_half_timber_negative_11",
+						"umu:block/plaster_half_timber_positive_12"
+					]
+				},
+				{
+					"size": [ 2, 3 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_positive_13",
+						"umu:block/plaster_half_timber_cross_9",
+						"umu:block/plaster_half_timber_negative_14",
+						"umu:block/plaster_half_timber_negative_15",
+						"umu:block/plaster_half_timber_cross_10",
+						"umu:block/plaster_half_timber_positive_16"
+					]
+				},
+				{
+					"size": [ 3, 1 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_cross_11",
+						"umu:block/plaster_half_timber_cross_12",
+						"umu:block/plaster_half_timber_cross_13"
+					]
+				},
+				{
+					"size": [ 3, 2 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_positive_20",
+						"umu:block/plaster_half_timber_negative_20",
+						"umu:block/plaster_half_timber_cross_14",
+						"umu:block/plaster_half_timber_cross_15",
+						"umu:block/plaster_half_timber_negative_23",
+						"umu:block/plaster_half_timber_positive_23"
+					]
+				},
+				{
+					"size": [ 3, 3 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_positive_9",
+						"umu:block/plaster_half_timber_cross_16",
+						"umu:block/plaster_half_timber_negative_10",
+						"umu:block/plaster_half_timber_cross_17",
+						"umu:block/plaster_half_timber_cross_18",
+						"umu:block/plaster_half_timber_cross_19",
+						"umu:block/plaster_half_timber_negative_11",
+						"umu:block/plaster_half_timber_cross_20",
+						"umu:block/plaster_half_timber_positive_12"
+					]
+				}
+			]
+		}
+	}
+}

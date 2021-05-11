@@ -1,0 +1,32 @@
+{
+	"loader": "umu:connected-textures",
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "umu:block/plaster_half_timber_cross",
+		"side": "umu:block/plaster_half_timber_pattern_flower_1"
+	},
+	"connections": {
+		"side": {
+			"type": "tile",
+			"elements": [
+				{
+					"size": [ 1, 1 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_pattern_flower_1"
+					]
+				},
+				{
+					"size": [ 1, 2 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/plaster_half_timber_pattern_flower_2",
+						"umu:block/plaster_half_timber_pattern_flower_3"
+					]
+				}
+			]
+		}
+	}
+}
