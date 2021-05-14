@@ -92,12 +92,6 @@ public class WoodenBoxTileEntity extends TileEntity implements IInventory {
 		this.contents = itemStack.copy();
 	}
 
-	public void addContents(ItemStack itemStack) {
-		int putCount = Math.min(itemStack.getCount(), itemStack.getMaxStackSize() - this.getContents().getCount());
-		this.getContents().grow(putCount);
-		itemStack.shrink(putCount);
-	}
-
 	public ItemStack putItem(ItemStack itemStack) {
 		ItemStack thisStack = this.getContents();
 		if (thisStack.isEmpty()) {
