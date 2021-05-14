@@ -49,6 +49,7 @@ public class ThinWoodenBoxBlock extends SlabBlock {
 							|| (!itemStack.isEmpty() && !woodenBoxTileEntity.isEmpty() && item != woodenBoxTileEntity.getItem())) {
 						return ActionResultType.CONSUME;
 					}
+					
 					ItemStack putStack;
 					if (state.get(TYPE) == SlabType.DOUBLE) {
 						putStack = woodenBoxTileEntity.putItem(itemStack);
@@ -61,6 +62,10 @@ public class ThinWoodenBoxBlock extends SlabBlock {
 						player.setHeldItem(handIn, putStack);
 					}
 				} else {
+					if (woodenBoxTileEntity.isEmpty()) {
+						return ActionResultType.CONSUME;
+					}
+
 					ItemStack takeStack = woodenBoxTileEntity.takeItem();
 					if (itemStack.isEmpty()) {
 						player.setHeldItem(handIn, takeStack);

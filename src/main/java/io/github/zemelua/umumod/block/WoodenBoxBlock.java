@@ -46,12 +46,17 @@ public class WoodenBoxBlock extends Block {
 							|| (!itemStack.isEmpty() && !woodenBoxTileEntity.isEmpty() && item != woodenBoxTileEntity.getItem())) {
 						return ActionResultType.CONSUME;
 					}
+
 					worldIn.setBlockState(pos, state.with(ITEM, WoodenBoxContents.getByItem(item)));
 					ItemStack putStack = woodenBoxTileEntity.putItem(itemStack);
 					if (!player.abilities.isCreativeMode) {
 						player.setHeldItem(handIn, putStack);
 					}
 				} else {
+					if (woodenBoxTileEntity.isEmpty()) {
+						return ActionResultType.CONSUME;
+					}
+
 					ItemStack takeStack = woodenBoxTileEntity.takeItem();
 					if (itemStack.isEmpty()) {
 						player.setHeldItem(handIn, takeStack);
