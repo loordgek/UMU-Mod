@@ -31,7 +31,6 @@ public class ThinWoodenBoxBlock extends SlabBlock {
 
 	public ThinWoodenBoxBlock(Properties properties) {
 		super(properties);
-		this.setDefaultState(this.getDefaultState().with(ITEM, WoodenBoxContents.APPLE));
 	}
 
 	@SuppressWarnings({"deprecation", "DuplicatedCode", "NullableProblems"})
@@ -49,7 +48,7 @@ public class ThinWoodenBoxBlock extends SlabBlock {
 							|| (!itemStack.isEmpty() && !woodenBoxTileEntity.isEmpty() && item != woodenBoxTileEntity.getItem())) {
 						return ActionResultType.CONSUME;
 					}
-					
+
 					ItemStack putStack;
 					if (state.get(TYPE) == SlabType.DOUBLE) {
 						putStack = woodenBoxTileEntity.putItem(itemStack);

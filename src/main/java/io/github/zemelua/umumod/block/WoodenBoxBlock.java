@@ -28,7 +28,7 @@ public class WoodenBoxBlock extends Block {
 
 	public WoodenBoxBlock(Properties properties) {
 		super(properties);
-		this.setDefaultState(this.getDefaultState().with(ITEM, WoodenBoxContents.APPLE));
+		this.setDefaultState(this.getDefaultState().with(ITEM, WoodenBoxContents.EMPTY));
 	}
 
 	@SuppressWarnings({"deprecation", "DuplicatedCode", "NullableProblems"})
