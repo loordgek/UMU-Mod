@@ -2,10 +2,12 @@ package io.github.zemelua.umumod.block;
 
 import io.github.zemelua.umumod.block.blockstateproperty.UMUBlockStateProperties;
 import io.github.zemelua.umumod.block.blockstateproperty.WoodenBoxContents;
+import io.github.zemelua.umumod.tileentity.ThinWoodenBoxTileEntity;
 import io.github.zemelua.umumod.tileentity.WoodenBoxTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
@@ -13,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
+import net.minecraft.state.properties.SlabType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -23,10 +26,10 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class WoodenBoxBlock extends Block {
+public class ThinWoodenBoxBlock extends SlabBlock {
 	public static final EnumProperty<WoodenBoxContents> ITEM = UMUBlockStateProperties.WOODEN_BOX_ITEM;
 
-	public WoodenBoxBlock(Properties properties) {
+	public ThinWoodenBoxBlock(Properties properties) {
 		super(properties);
 		this.setDefaultState(this.getDefaultState().with(ITEM, WoodenBoxContents.APPLE));
 	}
@@ -42,12 +45,18 @@ public class WoodenBoxBlock extends Block {
 
 			if (!(itemStack.isEmpty() && woodenBoxTileEntity.getContents().isEmpty())) {
 				if (WoodenBoxContents.isValidItem(item)) {
-					if (woodenBoxTileEntity.isFull(null)
+					if (woodenBoxTileEntity.isFull(state.get(TYPE))
 							|| (!itemStack.isEmpty() && !woodenBoxTileEntity.isEmpty() && item != woodenBoxTileEntity.getItem())) {
 						return ActionResultType.CONSUME;
 					}
+					ItemStack putStack;
+					if (state.get(TYPE) == SlabType.DOUBLE) {
+						putStack = woodenBoxTileEntity.putItem(itemStack);
+					} else {
+						putStack = woodenBoxTileEntity.putItem(itemStack.split(itemStack.getMaxStackSize() / 2));
+						putStack.grow(itemStack.getCount());
+					}
 					worldIn.setBlockState(pos, state.with(ITEM, WoodenBoxContents.getByItem(item)));
-					ItemStack putStack = woodenBoxTileEntity.putItem(itemStack);
 					if (!player.abilities.isCreativeMode) {
 						player.setHeldItem(handIn, putStack);
 					}
@@ -69,7 +78,6 @@ public class WoodenBoxBlock extends Block {
 		return ActionResultType.CONSUME;
 	}
 
-	@SuppressWarnings({"deprecation", "DuplicatedCode", "NullableProblems"})
 	@Override
 	public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (!state.matchesBlock(newState.getBlock())) {
@@ -85,6 +93,7 @@ public class WoodenBoxBlock extends Block {
 
 	@Override
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+		super.fillStateContainer(builder);
 		builder.add(ITEM);
 	}
 
@@ -96,10 +105,9 @@ public class WoodenBoxBlock extends Block {
 	@Nullable
 	@Override
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-		return new WoodenBoxTileEntity();
+		return new ThinWoodenBoxTileEntity();
 	}
 
-	@SuppressWarnings({"NullableProblems", "deprecation"})
 	@Override
 	public BlockRenderType getRenderType(BlockState state) {
 		return BlockRenderType.MODEL;

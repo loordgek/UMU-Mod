@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/cross",
+	"textures": {
+		"cross": "umu:block/ash_sapling"
+	}
+}

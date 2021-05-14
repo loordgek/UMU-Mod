@@ -63,7 +63,9 @@ public class UMUItems {
 	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_CROSS = ITEMS.register("plaster_half_timber_cross", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_CROSS.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_PATTERN_FLOWER = ITEMS.register("plaster_half_timber_pattern_flower", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_PATTERN_FLOWER.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 
-	public static final RegistryObject<Item> WOODEN_BOX = ITEMS.register("wooden_box", () -> new BlockItem(UMUBlocks.WOODEN_BOX.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> WOODEN_BOX_OLD = ITEMS.register("wooden_box_old", () -> new BlockItem(UMUBlocks.WOODEN_BOX_OLD.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> WOODEN_BOX = ITEMS.register("wooden_box", () -> new BlockItem(UMUBlocks.WOODEN_BOX.get(), new Item.Properties().group(UMUItemGroups.DECORATIONS)));
+	public static final RegistryObject<Item> THIN_WOODEN_BOX = ITEMS.register("thin_wooden_box", () -> new BlockItem(UMUBlocks.THIN_WOODEN_BOX.get(), new Item.Properties().group(UMUItemGroups.DECORATIONS)));
 	public static final RegistryObject<Item> QUARTZ_COLUMN = ITEMS.register("quartz_column", () -> new BlockItem(UMUBlocks.QUARTZ_COLUMN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
 	// public static final RegistryObject<Item> BUMPKIN = ITEMS.register("bumpkin", () -> new BlockItem(UMUBlocks.BUMPKIN.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));

@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/door_bottom",
+	"textures": {
+		"top": "umu:block/ash_door_top",
+		"bottom": "umu:block/ash_door_bottom"
+	}
+}

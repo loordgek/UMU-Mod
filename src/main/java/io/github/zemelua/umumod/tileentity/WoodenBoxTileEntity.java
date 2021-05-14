@@ -1,65 +1,130 @@
 package io.github.zemelua.umumod.tileentity;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.inventory.container.ChestContainer;
-import net.minecraft.inventory.container.Container;
+import io.github.zemelua.umumod.util.ItemStackUtil;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.tileentity.LockableLootTileEntity;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.state.properties.SlabType;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 
-public class WoodenBoxTileEntity extends LockableLootTileEntity {
-	private NonNullList<ItemStack> woodenBoxContents = NonNullList.withSize(27, ItemStack.EMPTY);
+import java.util.Objects;
+
+public class WoodenBoxTileEntity extends TileEntity implements IInventory {
+	protected ItemStack contents = ItemStack.EMPTY;
+
+	protected WoodenBoxTileEntity(TileEntityType<?> typeIn) {
+		super(typeIn);
+	}
 
 	public WoodenBoxTileEntity() {
 		super(UMUTileEntities.WOODEN_BOX.get());
 	}
 
 	@Override
-	public void read(BlockState state, CompoundNBT nbt) {
-		super.read(state, nbt);
-		this.woodenBoxContents = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
-		if (this.checkLootAndRead(nbt)) {
-			ItemStackHelper.loadAllItems(nbt, this.woodenBoxContents);
-		}
-	}
-
-	@Override
-	public CompoundNBT write(CompoundNBT nbt) {
-		super.write(nbt);
-		if (!this.checkLootAndWrite(nbt)) {
-			ItemStackHelper.saveAllItems(nbt, this.woodenBoxContents);
-		}
-
-		return nbt;
-	}
-
-	@Override
-	public NonNullList<ItemStack> getItems() {
-		return this.woodenBoxContents;
-	}
-
-	@Override
-	protected void setItems(NonNullList<ItemStack> itemsIn) {
-		this.woodenBoxContents = itemsIn;
-	}
-
-	@Override
-	protected ITextComponent getDefaultName() {
-		return new TranslationTextComponent("container.wooden_box");
-	}
-
-	@Override
-	protected Container createMenu(int id, PlayerInventory player) {
-		return ChestContainer.createGeneric9X3(id, player, this);
-	}
-
-	@Override
 	public int getSizeInventory() {
-		return 27;
+		return 1;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return contents.isEmpty();
+	}
+
+	@SuppressWarnings("NullableProblems")
+	@Override
+	public ItemStack getStackInSlot(int index) {
+		return index == 0 ? this.contents : ItemStack.EMPTY;
+	}
+
+	@SuppressWarnings("NullableProblems")
+	@Override
+	public ItemStack decrStackSize(int index, int count) {
+		if (index == 0) {
+			return this.getContents().split(count);
+		}
+		return ItemStack.EMPTY;
+	}
+
+	@SuppressWarnings("NullableProblems")
+	@Override
+	public ItemStack removeStackFromSlot(int index) {
+		if (index == 0) {
+			ItemStack itemstack = this.contents;
+			this.contents = ItemStack.EMPTY;
+			return itemstack;
+		} else {
+			return ItemStack.EMPTY;
+		}
+	}
+
+	@SuppressWarnings("NullableProblems")
+	@Override
+	public void setInventorySlotContents(int index, ItemStack stack) {
+	}
+
+	@SuppressWarnings("NullableProblems")
+	@Override
+	public boolean isUsableByPlayer(PlayerEntity player) {
+		if (Objects.requireNonNull(this.getWorld()).getTileEntity(this.getPos()) != this) {
+			return false;
+		} else {
+			return !(player.getDistanceSq((double) this.pos.getX() + 0.5D, (double) this.pos.getY() + 0.5D, (double) this.pos.getZ() + 0.5D) > 64.0D)
+					&& this.hasContents();
+		}
+	}
+
+	@Override
+	public void clear() {
+		this.contents = ItemStack.EMPTY;
+	}
+
+	public ItemStack getContents() {
+		return this.contents;
+	}
+
+	public Item getItem() {
+		return this.getContents().getItem();
+	}
+
+	public void setContents(ItemStack itemStack) {
+		this.contents = itemStack.copy();
+	}
+
+	public void addContents(ItemStack itemStack) {
+		int putCount = Math.min(itemStack.getCount(), itemStack.getMaxStackSize() - this.getContents().getCount());
+		this.getContents().grow(putCount);
+		itemStack.shrink(putCount);
+	}
+
+	public ItemStack putItem(ItemStack itemStack) {
+		ItemStack thisStack = this.getContents();
+		if (thisStack.isEmpty()) {
+			this.setContents(itemStack.copy());
+			return ItemStack.EMPTY;
+		} else if (ItemStackUtil.canCombine(thisStack, itemStack)) {
+			int putCount = Math.min(itemStack.getCount(), itemStack.getMaxStackSize() - thisStack.getCount());
+			thisStack.grow(putCount);
+			ItemStack putStack = itemStack.copy();
+			putStack.split(putCount);
+			return putStack;
+		}
+		return itemStack;
+	}
+
+	public ItemStack takeItem() {
+		ItemStack thisStack = this.getContents();
+		this.setContents(ItemStack.EMPTY);
+		return thisStack.copy();
+	}
+
+	private boolean hasContents() {
+		return this.contents != ItemStack.EMPTY;
+	}
+
+	public boolean isFull(SlabType type) {
+		ItemStack itemStack = this.getContents();
+		return !itemStack.isEmpty() && itemStack.getMaxStackSize() == itemStack.getCount();
 	}
 }

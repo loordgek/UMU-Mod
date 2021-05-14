@@ -80,7 +80,10 @@ public class UMUBlocks {
 	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_CROSS = BLOCKS.register("plaster_half_timber_cross", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.from(PLASTER_HALF_TIMBER_NONE.get())));
 	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_PATTERN_FLOWER = BLOCKS.register("plaster_half_timber_pattern_flower", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.from(PLASTER_HALF_TIMBER_NONE.get())));
 
-	public static final RegistryObject<Block> WOODEN_BOX = BLOCKS.register("wooden_box", () -> new WoodenBoxBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(4.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> WOODEN_BOX_OLD = BLOCKS.register("wooden_box_old", () -> new WoodenBoxBlockOld(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(4.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> WOODEN_BOX = BLOCKS.register("wooden_box", () -> new WoodenBoxBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(4.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> THIN_WOODEN_BOX = BLOCKS.register("thin_wooden_box", () -> new ThinWoodenBoxBlock(AbstractBlock.Properties.from(WOODEN_BOX.get())));
+
 	public static final RegistryObject<Block> QUARTZ_COLUMN = BLOCKS.register("quartz_column", () -> new ColumnBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
 
 	// public static final RegistryObject<Block> BUMPKIN = BLOCKS.register("bumpkin", () -> new BumpkinBlock(AbstractBlock.Properties.create(Material.GOURD, MaterialColor.ADOBE).hardnessAndResistance(1.5F).sound(SoundType.WOOD)));
