@@ -1,0 +1,13 @@
+{
+	"variants": {
+		"item=apple": {
+			"model": "umu:block/wooden_box_apple"
+		},
+		"item=cod": {
+			"model": "umu:block/wooden_box_cod"
+		},
+		"item=empty": {
+			"model": "umu:block/wooden_box"
+		}
+	}
+}

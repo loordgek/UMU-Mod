@@ -44,7 +44,7 @@ public class WoodenBoxBlock extends Block {
 				if (WoodenBoxContents.isValidItem(item)) {
 					if (woodenBoxTileEntity.isFull(null)
 							|| (!itemStack.isEmpty() && !woodenBoxTileEntity.isEmpty() && item != woodenBoxTileEntity.getItem())) {
-						return ActionResultType.CONSUME;
+						return ActionResultType.PASS;
 					}
 
 					worldIn.setBlockState(pos, state.with(ITEM, WoodenBoxContents.getByItem(item)));
@@ -54,7 +54,7 @@ public class WoodenBoxBlock extends Block {
 					}
 				} else {
 					if (woodenBoxTileEntity.isEmpty()) {
-						return ActionResultType.CONSUME;
+						return ActionResultType.PASS;
 					}
 
 					ItemStack takeStack = woodenBoxTileEntity.takeItem();
@@ -65,10 +65,12 @@ public class WoodenBoxBlock extends Block {
 					}
 
 					worldIn.setBlockState(pos, state.with(ITEM, WoodenBoxContents.EMPTY));
+
+					return ActionResultType.func_233537_a_(worldIn.isRemote());
 				}
 			}
 
-			return ActionResultType.func_233537_a_(worldIn.isRemote());
+			return ActionResultType.PASS;
 		}
 
 		return ActionResultType.CONSUME;

@@ -46,14 +46,14 @@ public class ThinWoodenBoxBlock extends SlabBlock {
 				if (WoodenBoxContents.isValidItem(item)) {
 					if (woodenBoxTileEntity.isFull(state.get(TYPE))
 							|| (!itemStack.isEmpty() && !woodenBoxTileEntity.isEmpty() && item != woodenBoxTileEntity.getItem())) {
-						return ActionResultType.CONSUME;
+						return ActionResultType.PASS;
 					}
 
 					ItemStack putStack;
 					if (state.get(TYPE) == SlabType.DOUBLE) {
-						putStack = woodenBoxTileEntity.putItem(itemStack);
+						putStack = woodenBoxTileEntity.putItem(itemStack.copy());
 					} else {
-						putStack = woodenBoxTileEntity.putItem(itemStack.split(itemStack.getMaxStackSize() / 2));
+						putStack = woodenBoxTileEntity.putItem(itemStack.copy().split(itemStack.getMaxStackSize() / 2));
 						putStack.grow(itemStack.getCount());
 					}
 					worldIn.setBlockState(pos, state.with(ITEM, WoodenBoxContents.getByItem(item)));
@@ -62,7 +62,7 @@ public class ThinWoodenBoxBlock extends SlabBlock {
 					}
 				} else {
 					if (woodenBoxTileEntity.isEmpty()) {
-						return ActionResultType.CONSUME;
+						return ActionResultType.PASS;
 					}
 
 					ItemStack takeStack = woodenBoxTileEntity.takeItem();
@@ -73,10 +73,11 @@ public class ThinWoodenBoxBlock extends SlabBlock {
 					}
 
 					worldIn.setBlockState(pos, state.with(ITEM, WoodenBoxContents.EMPTY));
+					return ActionResultType.func_233537_a_(worldIn.isRemote());
 				}
 			}
 
-			return ActionResultType.func_233537_a_(worldIn.isRemote());
+			return ActionResultType.PASS;
 		}
 
 		return ActionResultType.CONSUME;

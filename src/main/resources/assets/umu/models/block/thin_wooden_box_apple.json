@@ -1,0 +1,6 @@
+{
+	"parent": "umu:block/thin_wooden_box_full",
+	"textures": {
+		"inside": "umu:block/wooden_box_apple"
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"variants": {
+		"item=apple,type=bottom": {
+			"model": "umu:block/thin_wooden_box_apple"
+		},
+		"item=apple,type=double": {
+			"model": "umu:block/thin_wooden_box_apple_double"
+		},
+		"item=apple,type=top": {
+			"model": "umu:block/thin_wooden_box_apple_top"
+		},
+		"item=cod,type=bottom": {
+			"model": "umu:block/thin_wooden_box_cod"
+		},
+		"item=cod,type=double": {
+			"model": "umu:block/thin_wooden_box_cod_double"
+		},
+		"item=cod,type=top": {
+			"model": "umu:block/thin_wooden_box_cod_top"
+		},
+		"item=empty,type=bottom": {
+			"model": "umu:block/thin_wooden_box"
+		},
+		"item=empty,type=double": {
+			"model": "umu:block/thin_wooden_box_double"
+		},
+		"item=empty,type=top": {
+			"model": "umu:block/thin_wooden_box_top"
+		}
+	}
+}

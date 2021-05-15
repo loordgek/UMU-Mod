@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "umu:block/wooden_box",
+		"side": "umu:block/thin_wooden_box"
+	}
+}
