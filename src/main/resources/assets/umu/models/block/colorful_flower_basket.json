@@ -1,0 +1,6 @@
+{
+	"parent": "umu:block/flower_basket_cross",
+	"textures": {
+		"plant": "umu:block/colorful_flowers"
+	}
+}

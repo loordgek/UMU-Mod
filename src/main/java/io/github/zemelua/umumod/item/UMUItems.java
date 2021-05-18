@@ -63,6 +63,15 @@ public class UMUItems {
 	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_CROSS = ITEMS.register("plaster_half_timber_cross", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_CROSS.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_PATTERN_FLOWER = ITEMS.register("plaster_half_timber_pattern_flower", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_PATTERN_FLOWER.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 
+	public static final RegistryObject<Item> FLOWER_BASKET = ITEMS.register("flower_basket", () -> new BlockItem(UMUBlocks.FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> RED_FLOWER_BASKET = ITEMS.register("red_flower_basket", () -> new BlockItem(UMUBlocks.RED_FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> YELLOW_FLOWER_BASKET = ITEMS.register("yellow_flower_basket", () -> new BlockItem(UMUBlocks.YELLOW_FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> WHITE_FLOWER_BASKET = ITEMS.register("white_flower_basket", () -> new BlockItem(UMUBlocks.WHITE_FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> BLUE_FLOWER_BASKET = ITEMS.register("blue_flower_basket", () -> new BlockItem(UMUBlocks.BLUE_FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> COLORFUL_FLOWER_BASKET = ITEMS.register("colorful_flower_basket", () -> new BlockItem(UMUBlocks.COLORFUL_FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> BUSH_FLOWER_BASKET = ITEMS.register("bush_flower_basket", () -> new BlockItem(UMUBlocks.BUSH_FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> SUSPICIOUS_FLOWER_BASKET = ITEMS.register("suspicious_flower_basket", () -> new BlockItem(UMUBlocks.SUSPICIOUS_FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	public static final RegistryObject<Item> NETHER_FLOWER_BASKET = ITEMS.register("nether_flower_basket", () -> new BlockItem(UMUBlocks.NETHER_FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 	public static final RegistryObject<Item> WOODEN_BOX_OLD = ITEMS.register("wooden_box_old", () -> new BlockItem(UMUBlocks.WOODEN_BOX_OLD.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 	public static final RegistryObject<Item> WOODEN_BOX = ITEMS.register("wooden_box", () -> new BlockItem(UMUBlocks.WOODEN_BOX.get(), new Item.Properties().group(UMUItemGroups.DECORATIONS)));
 	public static final RegistryObject<Item> THIN_WOODEN_BOX = ITEMS.register("thin_wooden_box", () -> new BlockItem(UMUBlocks.THIN_WOODEN_BOX.get(), new Item.Properties().group(UMUItemGroups.DECORATIONS)));

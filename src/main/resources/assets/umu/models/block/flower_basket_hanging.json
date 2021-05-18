@@ -1,0 +1,82 @@
+{
+	"parent": "minecraft:block/block",
+	"textures": {
+		"particle": "umu:block/flower_basket",
+		"flowerbasket": "umu:block/flower_basket",
+		"dirt": "minecraft:block/dirt",
+		"chain": "umu:block/flower_basket_chain"
+	},
+	"ambientocclusion": false,
+	"elements": [
+		{
+			"from": [ 2, 3, 2 ],
+			"to": [ 4, 7, 14 ],
+			"faces": {
+				"down":  { "uv": [  2,  2,  4, 14 ], "texture": "#flowerbasket" },
+				"up":    { "uv": [  2,  2,  4, 14 ], "texture": "#flowerbasket" },
+				"north": { "uv": [ 12, 12, 14, 16 ], "texture": "#flowerbasket" },
+				"south": { "uv": [  2, 12,  4, 16 ], "texture": "#flowerbasket" },
+				"west":  { "uv": [  2, 12, 14, 16 ], "texture": "#flowerbasket" },
+				"east":  { "uv": [  2, 12, 14, 16 ], "texture": "#flowerbasket" }
+			}
+		},
+		{
+			"from": [ 12, 3, 2 ],
+			"to": [ 14, 7, 14 ],
+			"faces": {
+				"down":  { "uv": [ 12,  2, 14, 14 ], "texture": "#flowerbasket" },
+				"up":    { "uv": [ 12,  2, 14, 14 ], "texture": "#flowerbasket" },
+				"north": { "uv": [  2, 12,  4, 16 ], "texture": "#flowerbasket" },
+				"south": { "uv": [ 12, 12, 14, 16 ], "texture": "#flowerbasket" },
+				"west":  { "uv": [  2, 12, 14, 16 ], "texture": "#flowerbasket" },
+				"east":  { "uv": [  2, 12, 14, 16 ], "texture": "#flowerbasket" }
+			}
+		},
+		{
+			"from": [ 4, 3, 2 ],
+			"to": [ 12, 7, 4 ],
+			"faces": {
+				"down":  { "uv": [ 4, 12, 12, 14 ], "texture": "#flowerbasket" },
+				"up":    { "uv": [ 4,  2,  2,  8 ], "texture": "#flowerbasket" },
+				"north": { "uv": [ 4, 12, 12, 16 ], "texture": "#flowerbasket" },
+				"south": { "uv": [ 4, 12, 12, 16 ], "texture": "#flowerbasket" }
+			}
+		},
+		{
+			"from": [ 4, 3, 12 ],
+			"to": [ 12, 7, 14 ],
+			"faces": {
+				"down":  { "uv": [ 4,  2,  2,  8 ], "texture": "#flowerbasket" },
+				"up":    { "uv": [ 4, 12, 12, 14 ], "texture": "#flowerbasket" },
+				"north": { "uv": [ 4, 12, 12, 16 ], "texture": "#flowerbasket" },
+				"south": { "uv": [ 4, 12, 12, 16 ], "texture": "#flowerbasket" }
+			}
+		},
+		{
+			"from": [ 4, 3, 4 ],
+			"to": [ 12, 6, 12 ],
+			"faces": {
+				"down": { "uv": [ 4, 4, 12, 12 ], "texture": "#flowerbasket" },
+				"up":   { "uv": [ 4, 4, 12, 12 ], "texture": "#dirt" }
+			}
+		},
+		{
+			"from": [ 2, 7, 8 ],
+			"to": [ 14, 16, 8 ],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+			"faces": {
+				"north": { "uv": [ 2, 7, 14, 16 ], "texture": "#chain" },
+				"south": { "uv": [ 2, 7, 14, 16 ], "texture": "#chain" }
+			}
+		},
+		{
+			"from": [ 8, 7, 2 ],
+			"to": [ 8, 16, 14 ],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+			"faces": {
+				"east": { "uv": [ 2, 7, 14, 16 ], "texture": "#chain" },
+				"west": { "uv": [ 2, 7, 14, 16 ], "texture": "#chain" }
+			}
+		}
+	]
+}

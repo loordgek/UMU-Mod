@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"hanging=false": { "model": "umu:block/white_flower_basket" },
+		"hanging=true":  { "model": "umu:block/white_flower_basket_hanging" }
+	}
+}

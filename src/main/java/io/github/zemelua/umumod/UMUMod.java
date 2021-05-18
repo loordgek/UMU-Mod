@@ -62,6 +62,15 @@ public class UMUMod {
 		LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
 
 		RenderTypeLookup.setRenderLayer(UMUBlocks.SAKURA_DOOR.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(UMUBlocks.FLOWER_BASKET.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(UMUBlocks.RED_FLOWER_BASKET.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(UMUBlocks.YELLOW_FLOWER_BASKET.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(UMUBlocks.WHITE_FLOWER_BASKET.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(UMUBlocks.BLUE_FLOWER_BASKET.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(UMUBlocks.COLORFUL_FLOWER_BASKET.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(UMUBlocks.BUSH_FLOWER_BASKET.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(UMUBlocks.SUSPICIOUS_FLOWER_BASKET.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(UMUBlocks.NETHER_FLOWER_BASKET.get(), RenderType.getCutout());
 	}
 
 	private void enqueueIMC(final InterModEnqueueEvent event) {
