@@ -1,0 +1,114 @@
+{
+	"loader": "umu:connected-textures",
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "umu:block/ash_planks",
+		"side": "umu:block/terracotta_half_timber_none_0"
+	},
+	"connections": {
+		"side": {
+			"type": "tile",
+			"elements": [
+				{
+					"size": [ 1, 1 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/terracotta_half_timber_none_0"
+					]
+				},
+				{
+					"size": [ 1, 2 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/terracotta_half_timber_none_1",
+						"umu:block/terracotta_half_timber_none_2"
+					]
+				},
+				{
+					"size": [ 1, 3 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/terracotta_half_timber_none_1",
+						"umu:block/terracotta_half_timber_none_3",
+						"umu:block/terracotta_half_timber_none_2"
+					]
+				},
+				{
+					"size": [ 2, 1 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/terracotta_half_timber_none_4",
+						"umu:block/terracotta_half_timber_none_5"
+					]
+				},
+				{
+					"size": [ 2, 2 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/terracotta_half_timber_none_6",
+						"umu:block/terracotta_half_timber_none_7",
+						"umu:block/terracotta_half_timber_none_8",
+						"umu:block/terracotta_half_timber_none_9"
+					]
+				},
+				{
+					"size": [ 2, 3 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/terracotta_half_timber_none_6",
+						"umu:block/terracotta_half_timber_none_10",
+						"umu:block/terracotta_half_timber_none_7",
+						"umu:block/terracotta_half_timber_none_8",
+						"umu:block/terracotta_half_timber_none_11",
+						"umu:block/terracotta_half_timber_none_9"
+					]
+				},
+				{
+					"size": [ 3, 1 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/terracotta_half_timber_none_4",
+						"umu:block/terracotta_half_timber_none_12",
+						"umu:block/terracotta_half_timber_none_5"
+					]
+				},
+				{
+					"size": [ 3, 2 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/terracotta_half_timber_none_6",
+						"umu:block/terracotta_half_timber_none_7",
+						"umu:block/terracotta_half_timber_none_13",
+						"umu:block/terracotta_half_timber_none_14",
+						"umu:block/terracotta_half_timber_none_8",
+						"umu:block/terracotta_half_timber_none_9"
+					]
+				},
+				{
+					"size": [ 3, 3 ],
+					"connectback": false,
+					"variants": [ "switch" ],
+					"textures": [
+						"umu:block/terracotta_half_timber_none_6",
+						"umu:block/terracotta_half_timber_none_10",
+						"umu:block/terracotta_half_timber_none_7",
+						"umu:block/terracotta_half_timber_none_13",
+						"umu:block/terracotta",
+						"umu:block/terracotta_half_timber_none_14",
+						"umu:block/terracotta_half_timber_none_8",
+						"umu:block/terracotta_half_timber_none_11",
+						"umu:block/terracotta_half_timber_none_9"
+					]
+				}
+			]
+		}
+	}
+}
