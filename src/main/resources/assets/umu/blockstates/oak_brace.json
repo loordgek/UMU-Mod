@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"facing=north":  { "model": "umu:block/oak_brace" },
+		"facing=south":  { "model": "umu:block/oak_brace", "y": 180, "uvlock": true },
+		"facing=west":   { "model": "umu:block/oak_brace", "y": 270, "uvlock": true },
+		"facing=east":   { "model": "umu:block/oak_brace", "y": 90, "uvlock": true }
+	}
+}

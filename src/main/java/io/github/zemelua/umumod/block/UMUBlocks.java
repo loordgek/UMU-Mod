@@ -59,6 +59,8 @@ public class UMUBlocks {
 	public static final RegistryObject<Block> SAKURA_WALL_SIGN = BLOCKS.register("sakura_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(SAKURA_SIGN), UMUWoodType.SAKURA));
 	public static final RegistryObject<Block> ASH_WALL_SIGN = BLOCKS.register("ash_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(ASH_SIGN), UMUWoodType.ASH));
 
+	public static final RegistryObject<Block> OAK_BRACE = BLOCKS.register("oak_brace", () -> new BraceBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
+
 	public static final RegistryObject<Block> OAK_POST = BLOCKS.register("oak_post", () -> new PostBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
 
 	public static final RegistryObject<Block> OAK_VERTICAL_SLAB = BLOCKS.register("oak_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));

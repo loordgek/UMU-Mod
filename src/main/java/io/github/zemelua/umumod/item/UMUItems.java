@@ -44,6 +44,8 @@ public class UMUItems {
 	public static final RegistryObject<Item> SAKURA_SIGN = ITEMS.register("sakura_sign", () -> new SignItem(new Item.Properties().maxStackSize(16).group(ItemGroup.DECORATIONS), UMUBlocks.SAKURA_SIGN.get(), UMUBlocks.SAKURA_WALL_SIGN.get()));
 	public static final RegistryObject<Item> ASH_SIGN = ITEMS.register("ash_sign", () -> new SignItem(new Item.Properties().maxStackSize(16).group(ItemGroup.DECORATIONS), UMUBlocks.ASH_SIGN.get(), UMUBlocks.ASH_WALL_SIGN.get()));
 
+	public static final RegistryObject<Item> OAK_BRACE = ITEMS.register("oak_brace", () -> new BlockItem(UMUBlocks.OAK_BRACE.get(), new Item.Properties().group(UMUItemGroups.DECORATIONS)));
+
 	public static final RegistryObject<Item> OAK_POST = ITEMS.register("oak_post", () -> new BlockItem(UMUBlocks.OAK_POST.get(), new Item.Properties().group(UMUItemGroups.DECORATIONS)));
 
 	public static final RegistryObject<Item> OAK_VERTICAL_SLAB = ITEMS.register("oak_vertical_slab", () -> new BlockItem(UMUBlocks.OAK_VERTICAL_SLAB.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
