@@ -170,6 +170,8 @@ public class UMUBlocks {
 	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_CROSS = BLOCKS.register("plaster_half_timber_cross", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.from(UMUBlocks.PLASTER_HALF_TIMBER_NONE.get())));
 	public static final RegistryObject<Block> PLASTER_HALF_TIMBER_PATTERN_FLOWER = BLOCKS.register("plaster_half_timber_pattern_flower", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.from(UMUBlocks.PLASTER_HALF_TIMBER_NONE.get())));
 
+	public static final RegistryObject<Block> WHITE_BRICKS_PLANTER = BLOCKS.register("white_bricks_planter", () -> new PlanterBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.DIRT)));
+
 	public static final RegistryObject<Block> FLOWER_BASKET = BLOCKS.register("flower_basket", () -> new FlowerBasketBlock(AbstractBlock.Properties.create(Material.MISCELLANEOUS).zeroHardnessAndResistance().notSolid()));
 	public static final RegistryObject<Block> RED_FLOWER_BASKET = BLOCKS.register("red_flower_basket", () -> new FlowerBasketBlock(AbstractBlock.Properties.create(Material.MISCELLANEOUS).zeroHardnessAndResistance().notSolid()));
 	public static final RegistryObject<Block> YELLOW_FLOWER_BASKET = BLOCKS.register("yellow_flower_basket", () -> new FlowerBasketBlock(AbstractBlock.Properties.create(Material.MISCELLANEOUS).zeroHardnessAndResistance().notSolid()));

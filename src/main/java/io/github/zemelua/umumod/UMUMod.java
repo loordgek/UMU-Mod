@@ -1,10 +1,13 @@
 package io.github.zemelua.umumod;
 
+import io.github.zemelua.umumod.block.PlanterBlock;
 import io.github.zemelua.umumod.block.UMUBlocks;
 import io.github.zemelua.umumod.client.renderer.model.UMUModelLoaders;
 import io.github.zemelua.umumod.item.UMUItems;
 import io.github.zemelua.umumod.tileentity.UMUTileEntities;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
@@ -46,6 +49,7 @@ public class UMUMod {
 
 		FMLJavaModLoadingContext.get().getModEventBus().register(UMUBlocks.class);
 		FMLJavaModLoadingContext.get().getModEventBus().register(UMUModelLoaders.class);
+		MinecraftForge.EVENT_BUS.register(new PlanterBlock(AbstractBlock.Properties.create(Material.ROCK)));
 
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);

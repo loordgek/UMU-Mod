@@ -152,6 +152,8 @@ public class UMUItems {
 	public static final RegistryObject<Item> BLACK_TERRACOTTA_HALF_TIMBER_CROSS = ITEMS.register("black_terracotta_half_timber_cross", () -> new BlockItem(UMUBlocks.BLACK_TERRACOTTA_HALF_TIMBER_CROSS.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> BLACK_TERRACOTTA_HALF_TIMBER_PATTERN_FLOWER = ITEMS.register("black_terracotta_half_timber_pattern_flower", () -> new BlockItem(UMUBlocks.BLACK_TERRACOTTA_HALF_TIMBER_PATTERN_FLOWER.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 
+	public static final RegistryObject<Item> WHITE_BRICKS_PLANTER = ITEMS.register("white_bricks_planter", () -> new BlockItem(UMUBlocks.WHITE_BRICKS_PLANTER.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
 	public static final RegistryObject<Item> FLOWER_BASKET = ITEMS.register("flower_basket", () -> new BlockItem(UMUBlocks.FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 	public static final RegistryObject<Item> RED_FLOWER_BASKET = ITEMS.register("red_flower_basket", () -> new BlockItem(UMUBlocks.RED_FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 	public static final RegistryObject<Item> YELLOW_FLOWER_BASKET = ITEMS.register("yellow_flower_basket", () -> new BlockItem(UMUBlocks.YELLOW_FLOWER_BASKET.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
