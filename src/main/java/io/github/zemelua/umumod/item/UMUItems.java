@@ -170,5 +170,5 @@ public class UMUItems {
 	public static final RegistryObject<Item> THIN_WOODEN_BOX = ITEMS.register("thin_wooden_box", () -> new BlockItem(UMUBlocks.THIN_WOODEN_BOX.get(), new Item.Properties().group(UMUItemGroups.DECORATIONS)));
 	public static final RegistryObject<Item> QUARTZ_COLUMN = ITEMS.register("quartz_column", () -> new BlockItem(UMUBlocks.QUARTZ_COLUMN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
-	// public static final RegistryObject<Item> BUMPKIN = ITEMS.register("bumpkin", () -> new BlockItem(UMUBlocks.BUMPKIN.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
+	public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register("iron_hammer", () -> new HammerItem(ItemTier.IRON, 6.2F, -3.5F, new Item.Properties().group(ItemGroup.TOOLS)));
 }
