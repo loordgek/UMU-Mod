@@ -59,6 +59,8 @@ public class UMUItems {
 	public static final RegistryObject<Item> SHOJI = ITEMS.register("shoji", () -> new BlockItem(UMUBlocks.SHOJI.get(), new Item.Properties().group(UMUItemGroups.FURNITURE)));
 
 	public static final RegistryObject<Item> PLASTER = ITEMS.register("plaster", () -> new BlockItem(UMUBlocks.PLASTER.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
+	public static final RegistryObject<Item> WHITE_BRICKS = ITEMS.register("white_bricks", () -> new BlockItem(UMUBlocks.WHITE_BRICKS.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
+	public static final RegistryObject<Item> SANDSTONE_BRICKS = ITEMS.register("sandstone__bricks", () -> new BlockItem(UMUBlocks.SANDSTONE_BRICKS.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 
 	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_NONE = ITEMS.register("plaster_half_timber_none", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_NONE.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> PLASTER_HALF_TIMBER_POSITIVE = ITEMS.register("plaster_half_timber_positive", () -> new BlockItem(UMUBlocks.PLASTER_HALF_TIMBER_POSITIVE.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));

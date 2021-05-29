@@ -77,6 +77,8 @@ public class UMUBlocks {
 	public static final RegistryObject<Block> FUSUMA = BLOCKS.register("fusuma", () -> new SlidingDoorBlock(AbstractBlock.Properties.from(Blocks.OAK_DOOR)));
 
 	public static final RegistryObject<Block> PLASTER = BLOCKS.register("plaster", () -> new Block(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(1.8F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> WHITE_BRICKS = BLOCKS.register("white_bricks", () -> new Block(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.QUARTZ).setRequiresTool().hardnessAndResistance(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SANDSTONE_BRICKS = BLOCKS.register("sandstone_bricks", () -> new Block(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.SAND).setRequiresTool().hardnessAndResistance(1.2F, 4.0F)));
 
 	public static final RegistryObject<Block> TERRACOTTA_HALF_TIMBER_NONE = BLOCKS.register("terracotta_half_timber_none", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BROWN).setRequiresTool().hardnessAndResistance(1.25F, 4.2F)));
 	public static final RegistryObject<Block> TERRACOTTA_HALF_TIMBER_POSITIVE = BLOCKS.register("terracotta_half_timber_positive", () -> new ConnectionSwitchBlock(AbstractBlock.Properties.from(UMUBlocks.TERRACOTTA_HALF_TIMBER_NONE.get())));
