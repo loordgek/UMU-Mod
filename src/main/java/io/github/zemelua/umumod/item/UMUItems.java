@@ -2,6 +2,7 @@ package io.github.zemelua.umumod.item;
 
 import io.github.zemelua.umumod.UMUMod;
 import io.github.zemelua.umumod.block.UMUBlocks;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -171,4 +172,5 @@ public class UMUItems {
 	public static final RegistryObject<Item> QUARTZ_COLUMN = ITEMS.register("quartz_column", () -> new BlockItem(UMUBlocks.QUARTZ_COLUMN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
 	public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register("iron_hammer", () -> new HammerItem(ItemTier.IRON, 6.2F, -3.5F, new Item.Properties().group(ItemGroup.TOOLS)));
+	public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack", () -> new BackpackItem(ArmorMaterial.LEATHER, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.TOOLS)));
 }

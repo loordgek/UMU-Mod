@@ -3,11 +3,16 @@ package io.github.zemelua.umumod;
 import io.github.zemelua.umumod.block.PlanterBlock;
 import io.github.zemelua.umumod.block.UMUBlocks;
 import io.github.zemelua.umumod.client.renderer.model.UMUModelLoaders;
+import io.github.zemelua.umumod.client.renderer.model.gui.screen.inventory.BelongingsInventoryScreen;
+import io.github.zemelua.umumod.inventory.container.UMUContainers;
+import io.github.zemelua.umumod.item.BackpackItem;
 import io.github.zemelua.umumod.item.UMUItems;
+import io.github.zemelua.umumod.network.UMUNetwork;
 import io.github.zemelua.umumod.tileentity.UMUTileEntities;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
@@ -46,10 +51,12 @@ public class UMUMod {
 		UMUBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		UMUItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		UMUTileEntities.TILE_ENTITY.register(FMLJavaModLoadingContext.get().getModEventBus());
+		UMUContainers.CONTAINER.register(FMLJavaModLoadingContext.get().getModEventBus());
 
 		FMLJavaModLoadingContext.get().getModEventBus().register(UMUBlocks.class);
 		FMLJavaModLoadingContext.get().getModEventBus().register(UMUModelLoaders.class);
 		MinecraftForge.EVENT_BUS.register(new PlanterBlock(AbstractBlock.Properties.create(Material.ROCK)));
+		MinecraftForge.EVENT_BUS.register(BackpackItem.class);
 
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);
@@ -59,6 +66,8 @@ public class UMUMod {
 		// some preinit code
 		LOGGER.info("HELLO FROM PREINIT");
 		LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
+		UMUNetwork.packetRegister();
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {
@@ -75,6 +84,8 @@ public class UMUMod {
 		RenderTypeLookup.setRenderLayer(UMUBlocks.BUSH_FLOWER_BASKET.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(UMUBlocks.SUSPICIOUS_FLOWER_BASKET.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(UMUBlocks.NETHER_FLOWER_BASKET.get(), RenderType.getCutout());
+
+		ScreenManager.registerFactory(UMUContainers.BELONGING_INVENTORY.get(), BelongingsInventoryScreen::new);
 	}
 
 	private void enqueueIMC(final InterModEnqueueEvent event) {

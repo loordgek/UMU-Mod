@@ -1,6 +1,8 @@
 package io.github.zemelua.umumod.util;
 
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.items.IItemHandler;
 
 public final class ItemStackUtil {
 	private ItemStackUtil() {
@@ -17,5 +19,13 @@ public final class ItemStackUtil {
 		} else {
 			return ItemStack.areItemStackTagsEqual(stack1, stack2);
 		}
+	}
+
+	public static Inventory createInventoryFromItemHandler(IItemHandler itemHandler) {
+		ItemStack[] itemStacks = new ItemStack[itemHandler.getSlots()];
+		for (int i = 0; i < itemHandler.getSlots(); i++) {
+			itemStacks[i] = itemHandler.getStackInSlot(i);
+		}
+		return new Inventory(itemStacks);
 	}
 }
