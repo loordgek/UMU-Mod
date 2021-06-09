@@ -47,11 +47,13 @@ public class BackpackItem extends DyeableArmorItem {
 		return super.onItemUse(context);
 	}
 
-	@Override
 	public static ItemStackHandler getInventory(ItemStack backpack) {
-		ItemStackHandler empty = new ItemStackHandler(36);
 		IItemHandler inventory = backpack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).orElse(new ItemStackHandler(36));
-		if (backpack.getItem() == UMUItems.BACKPACK.get() && )
+		if (backpack.getItem() == UMUItems.BACKPACK.get() && inventory instanceof ItemStackHandler) {
+			return (ItemStackHandler) inventory;
+		}
+
+		return new ItemStackHandler(36);
 	}
 
 	@SubscribeEvent

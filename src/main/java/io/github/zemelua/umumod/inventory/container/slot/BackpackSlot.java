@@ -1,11 +1,11 @@
 package io.github.zemelua.umumod.inventory.container.slot;
 
+import io.github.zemelua.umumod.item.BackpackItem;
 import io.github.zemelua.umumod.item.UMUItems;
 import io.github.zemelua.umumod.util.UMUEntityUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
@@ -32,8 +32,7 @@ public class BackpackSlot extends AbstractBelongingsSlot {
 	public void updateInventory(int slotIndex, ItemStack itemStack) {
 		if (slotIndex != 37) return;
 		if (itemStack.getItem() == UMUItems.BACKPACK.get()) {
-			this.inventoryItemHandler = itemStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
-					.orElse(new ItemStackHandler(36));
+			this.inventoryItemHandler = BackpackItem.getInventory(itemStack);
 		} else {
 			this.inventoryItemHandler = new ItemStackHandler(36);
 		}
