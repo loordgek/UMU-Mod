@@ -68,8 +68,9 @@ public class FluidTankHandler implements IFluidTankHandler {
 
 		for (FluidTank tank : this.tanks) {
 			int amount = tank.fill(copyResource, action);
+			int memo = copyResource.getAmount();
 			copyResource.setAmount(copyResource.getAmount() - amount);
-			Minecraft.getInstance().player.sendChatMessage(String.valueOf(amount));
+			Minecraft.getInstance().player.sendChatMessage(String.valueOf(amount) + String.valueOf(memo));
 		}
 
 		return copyResource.getAmount();

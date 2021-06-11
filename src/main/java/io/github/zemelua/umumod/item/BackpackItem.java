@@ -51,8 +51,11 @@ public class BackpackItem extends DyeableArmorItem {
 			inventory.insertItem(0, new ItemStack(Items.DIAMOND, 3), false);
 			context.getPlayer().sendMessage(new StringTextComponent(inventory.getStackInSlot(0).toString()), null);
 
-			tank.fill(new FluidStack(Fluids.WATER, 1), IFluidHandler.FluidAction.EXECUTE);
-			context.getPlayer().sendMessage(new StringTextComponent(String.valueOf(tank.getFluidInTank(0).getFluid().getRegistryName()) + tank.getFluidInTank(1).getAmount() + tank.getFluidInTank(2).getAmount() + tank.getFluidInTank(3).getAmount()), null);
+			// tank.fill(new FluidStack(Fluids.WATER, 1), IFluidHandler.FluidAction.EXECUTE);
+			// context.getPlayer().sendMessage(new StringTextComponent(String.valueOf(tank.getFluidInTank(0).getFluid().getRegistryName()) + tank.getFluidInTank(1).getAmount() + tank.getFluidInTank(2).getAmount() + tank.getFluidInTank(3).getAmount()), null);
+
+			((FluidTankHandler)tank).tanks.get(2).fill(new FluidStack(Fluids.WATER, 1), IFluidHandler.FluidAction.EXECUTE);
+			context.getPlayer().sendMessage(new StringTextComponent(String.valueOf(tank.getFluidInTank(2).getAmount())), null);
 		}
 
 		return super.onItemUse(context);
