@@ -10,7 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 @SuppressWarnings("unused")
 public class UMUItems {
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, UMUMod.MODID);
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, UMUMod.MOD_ID);
 
 	public static final RegistryObject<Item> SAKURA_LOG = ITEMS.register("sakura_log", () -> new BlockItem(UMUBlocks.SAKURA_LOG.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> ASH_LOG = ITEMS.register("ash_log", () -> new BlockItem(UMUBlocks.ASH_LOG.get(), new Item.Properties().group(UMUItemGroups.BUILDING_BLOCKS)));

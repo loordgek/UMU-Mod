@@ -9,7 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 @SuppressWarnings("ConstantConditions")
 public class UMUTileEntities {
-	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, UMUMod.MODID);
+	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, UMUMod.MOD_ID);
 
 	public static final RegistryObject<TileEntityType<WoodenBoxTileEntityOld>> WOODEN_BOX_OLD = TILE_ENTITY.register("wooden_box_old", () -> TileEntityType.Builder.create(WoodenBoxTileEntityOld::new, UMUBlocks.WOODEN_BOX_OLD.get()).build(null));
 	public static final RegistryObject<TileEntityType<WoodenBoxTileEntity>> WOODEN_BOX = TILE_ENTITY.register("wooden_box", () -> TileEntityType.Builder.create(WoodenBoxTileEntity::new, UMUBlocks.WOODEN_BOX.get()).build(null));

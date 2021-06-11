@@ -22,6 +22,6 @@ public class UMUModelLoaders {
 
 	@SubscribeEvent
 	public static void registerModelLoader(final ModelRegistryEvent event) {
-		ModelLoaderRegistry.registerLoader(new ResourceLocation(UMUMod.MODID, "connected-textures"), ConnectedTexturesModel.Loader.INSTANCE);
+		ModelLoaderRegistry.registerLoader(new ResourceLocation(UMUMod.MOD_ID, "connected-textures"), ConnectedTexturesModel.Loader.INSTANCE);
 	}
 }

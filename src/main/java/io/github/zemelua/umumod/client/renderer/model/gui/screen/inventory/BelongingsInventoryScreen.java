@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class BelongingsInventoryScreen extends ContainerScreen<BelongingsUMUPlayerContainer> {
-	private static final ResourceLocation BELONGINGS_INVENTORY_BACKGROUND = new ResourceLocation(UMUMod.MODID, "textures/gui/container/belongings_inventory.png");
+	private static final ResourceLocation BELONGINGS_INVENTORY_BACKGROUND = new ResourceLocation(UMUMod.MOD_ID, "textures/gui/container/belongings_inventory.png");
 
 	private float oldMouseX;
 	private float oldMouseY;

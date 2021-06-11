@@ -2,6 +2,7 @@ package io.github.zemelua.umumod;
 
 import io.github.zemelua.umumod.block.PlanterBlock;
 import io.github.zemelua.umumod.block.UMUBlocks;
+import io.github.zemelua.umumod.capability.UMUCapabilities;
 import io.github.zemelua.umumod.client.renderer.model.UMUModelLoaders;
 import io.github.zemelua.umumod.client.renderer.model.gui.screen.inventory.BelongingsInventoryScreen;
 import io.github.zemelua.umumod.inventory.container.UMUContainers;
@@ -31,9 +32,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(UMUMod.MODID)
+@Mod(UMUMod.MOD_ID)
 public class UMUMod {
-	public static final String MODID = "umu";
+	public static final String MOD_ID = "umu";
 
 	// Directly reference a log4j logger.
 	public static final Logger LOGGER = LogManager.getLogger();
@@ -68,6 +69,7 @@ public class UMUMod {
 		LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
 
 		UMUNetwork.packetRegister();
+		UMUCapabilities.register();
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {

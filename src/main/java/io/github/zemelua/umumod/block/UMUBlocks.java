@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 
 @SuppressWarnings("unused")
 public class UMUBlocks {
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, UMUMod.MODID);
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, UMUMod.MOD_ID);
 
 	public static final RegistryObject<Block> SAKURA_LOG = BLOCKS.register("sakura_log", createLogBlock(MaterialColor.WHITE_TERRACOTTA, MaterialColor.BROWN));
 	public static final RegistryObject<Block> ASH_LOG = BLOCKS.register("ash_log", createLogBlock(MaterialColor.SNOW, MaterialColor.QUARTZ));
