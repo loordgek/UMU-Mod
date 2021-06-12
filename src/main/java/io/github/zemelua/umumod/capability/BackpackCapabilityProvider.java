@@ -8,7 +8,6 @@ import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
@@ -55,11 +54,11 @@ public class BackpackCapabilityProvider implements ICapabilitySerializable<Compo
 				if (side.getAxis() == Direction.Axis.X) {
 					return this.backpackInventorySupplier.cast();
 				}
-				if (side.getAxis() == Direction.Axis.Y && hasQuiver) {
+				if (side.getAxis() == Direction.Axis.Y && this.hasQuiver) {
 					return this.quiverInventorySupplier.cast();
 				}
-			} else if (cap == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY) {
-				if (side.getAxis() == Direction.Axis.Z && hasTank) {
+			} else if (cap == UMUCapabilities.FLUID_TANK_HANDLER_CAPABILITY) {
+				if (side.getAxis() == Direction.Axis.Z && this.hasTank) {
 					return this.tankSupplier.cast();
 				}
 			}

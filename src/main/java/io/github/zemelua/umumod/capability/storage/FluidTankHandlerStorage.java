@@ -2,7 +2,6 @@ package io.github.zemelua.umumod.capability.storage;
 
 import io.github.zemelua.umumod.fluid.FluidTankHandler;
 import io.github.zemelua.umumod.fluid.IFluidTankHandler;
-import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.ListNBT;
@@ -24,10 +23,6 @@ public class FluidTankHandlerStorage<T extends IFluidTankHandler> implements Cap
 			fluidStack.writeToNBT(tankTag);
 			tankTag.putInt("Capacity", instance.getTankCapacity(i));
 			tankTagList.add(tankTag);
-
-			if (Minecraft.getInstance().player != null) {
-				// Minecraft.getInstance().player.sendMessage(new StringTextComponent(tankTag.getString("FluidName")), null);
-			}
 		}
 
 		return tankTagList;
@@ -42,7 +37,6 @@ public class FluidTankHandlerStorage<T extends IFluidTankHandler> implements Cap
 			FluidTankHandler tankHandler = (FluidTankHandler) instance;
 			tankHandler.setTankCapacity(i, tankTag.getInt("Capacity"));
 			tankHandler.setTankFromNBT(i, tankTag);
-			// Minecraft.getInstance().player.sendChatMessage(tankTag.getString("FluidName"));
 		}
 	}
 }
