@@ -80,6 +80,8 @@ public class BelongingsUMUPlayerContainer extends AbstractUMUPlayerContainer {
 				.forEach(s -> ((AbstractBelongingsSlot) s)
 						.updateInventory(slotId, player.inventory.getItemStack()));
 
+		// Synchronize backpack inventory to client ?
+
 		return super.slotClick(slotId, dragType, clickTypeIn, player);
 	}
 }
