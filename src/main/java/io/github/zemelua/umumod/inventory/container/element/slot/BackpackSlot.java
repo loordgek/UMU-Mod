@@ -1,9 +1,7 @@
 package io.github.zemelua.umumod.inventory.container.element.slot;
 
 import io.github.zemelua.umumod.item.UMUItems;
-import io.github.zemelua.umumod.util.UMUEntityUtil;
 import io.github.zemelua.umumod.util.UMUItemUtil;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
@@ -21,11 +19,13 @@ public class BackpackSlot extends AbstractBelongingsSlot {
 
 	@Override
 	public boolean isEnabled() {
-		if (UMUEntityUtil.hasBackpack(player)) {
-			return UMUEntityUtil.getBackpackSize(Minecraft.getInstance().player) >= size;
-		}
+		return true;
 
-		return false;
+//		if (UMUEntityUtil.hasBackpack(player)) {
+//			return UMUEntityUtil.getBackpackSize(Minecraft.getInstance().player) >= size;
+//		}
+//
+//		return false;
 	}
 
 	@Override
