@@ -1,4 +1,4 @@
-package io.github.zemelua.umumod.inventory.container.slot;
+package io.github.zemelua.umumod.inventory.container.element.slot;
 
 import com.mojang.datafixers.util.Pair;
 import io.github.zemelua.umumod.inventory.UMUEquipmentSlotType;

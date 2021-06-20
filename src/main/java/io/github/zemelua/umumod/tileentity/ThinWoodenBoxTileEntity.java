@@ -1,6 +1,6 @@
 package io.github.zemelua.umumod.tileentity;
 
-import io.github.zemelua.umumod.util.ItemStackUtil;
+import io.github.zemelua.umumod.util.UMUItemUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.item.ItemStack;
@@ -39,7 +39,7 @@ public class ThinWoodenBoxTileEntity extends WoodenBoxTileEntity {
 			ItemStack putStack = itemStack.copy();
 			putStack.split(putStack.getMaxStackSize() / 2);
 			return putStack;
-		} else if (ItemStackUtil.canCombine(thisStack, itemStack)) {
+		} else if (UMUItemUtil.canCombine(thisStack, itemStack)) {
 			int putCount = Math.min(itemStack.getCount(), itemStack.getMaxStackSize() / 2 - thisStack.getCount());
 			thisStack.grow(putCount);
 			ItemStack putStack = itemStack.copy();

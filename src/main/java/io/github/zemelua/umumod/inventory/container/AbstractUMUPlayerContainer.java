@@ -2,12 +2,12 @@ package io.github.zemelua.umumod.inventory.container;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ClickType;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 
-public abstract class AbstractUMUPlayerContainer extends Container {
+public abstract class AbstractUMUPlayerContainer extends HasTankContainer {
 	protected final PlayerEntity player;
 
 	protected AbstractUMUPlayerContainer(ContainerType<?> type, int id, PlayerInventory playerInventory, PlayerEntity player) {
@@ -24,6 +24,20 @@ public abstract class AbstractUMUPlayerContainer extends Container {
 		for(int i = 0; i < 9; i++) {
 			this.addSlot(new Slot(playerInventory, i, 186 + i * 18, 162));
 		}
+	}
+
+	public PlayerEntity getPlayer() {
+		return player;
+	}
+
+	@Override
+	public ItemStack slotClick(int slotId, int dragType, ClickType clickTypeIn, PlayerEntity player) {
+		this.inventorySlots.stream()
+				.filter(s -> s instanceof IUpdateInventoryElement)
+				.forEach(s -> ((IUpdateInventoryElement) s)
+						.updateInventory(slotId, player.inventory.getItemStack()));
+
+		return super.slotClick(slotId, dragType, clickTypeIn, player);
 	}
 
 	@Override

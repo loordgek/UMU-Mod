@@ -1,6 +1,6 @@
 package io.github.zemelua.umumod.tileentity;
 
-import io.github.zemelua.umumod.util.ItemStackUtil;
+import io.github.zemelua.umumod.util.UMUItemUtil;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
@@ -97,7 +97,7 @@ public class WoodenBoxTileEntity extends TileEntity implements IInventory {
 		if (thisStack.isEmpty()) {
 			this.setContents(itemStack.copy());
 			return ItemStack.EMPTY;
-		} else if (ItemStackUtil.canCombine(thisStack, itemStack)) {
+		} else if (UMUItemUtil.canCombine(thisStack, itemStack)) {
 			int putCount = Math.min(itemStack.getCount(), itemStack.getMaxStackSize() - thisStack.getCount());
 			thisStack.grow(putCount);
 			ItemStack putStack = itemStack.copy();

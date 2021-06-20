@@ -18,13 +18,17 @@ public class BackpackOpenMessage implements IMessage {
 		return new BackpackOpenMessage();
 	}
 
-	public static void handle(BackpackOpenMessage message, Supplier<Context> networkContext) {
-		ServerPlayerEntity player = networkContext.get().getSender();
-		networkContext.get().enqueueWork(() -> {
-			NetworkHooks.openGui(player, new SimpleNamedContainerProvider((id, playerInventory, unused) -> {
-				return new BelongingsUMUPlayerContainer(id, playerInventory, null);
-			}, new StringTextComponent("umu.backpack")));
-		});
-		networkContext.get().setPacketHandled(true);
+	public static void handle(BackpackOpenMessage message, Supplier<Context> networkContextSupplier) {
+		Context networkContext = networkContextSupplier.get();
+		ServerPlayerEntity player = networkContext.getSender();
+		if (player == null) return;
+
+		networkContext.enqueueWork(
+				() -> NetworkHooks.openGui(player, new SimpleNamedContainerProvider(
+						(id, playerInventory, unused) -> new BelongingsUMUPlayerContainer(id, playerInventory, null),
+						new StringTextComponent("umu.backpack")
+				))
+		);
+		networkContext.setPacketHandled(true);
 	}
 }

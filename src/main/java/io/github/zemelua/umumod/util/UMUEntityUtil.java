@@ -1,5 +1,6 @@
 package io.github.zemelua.umumod.util;
 
+import io.github.zemelua.umumod.fluid.IFluidTankHandler;
 import io.github.zemelua.umumod.inventory.UMUEquipmentSlotType;
 import io.github.zemelua.umumod.item.UMUItems;
 import net.minecraft.block.AbstractSkullBlock;
@@ -7,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
+import net.minecraftforge.items.IItemHandler;
 
 public class UMUEntityUtil {
 	public static UMUEquipmentSlotType getSlotForItemStack(ItemStack itemStack) {
@@ -30,31 +32,37 @@ public class UMUEntityUtil {
 		return UMUEquipmentSlotType.fromVanillaSlotType(vanillaType);
 	}
 
-
-
-	@SuppressWarnings("RedundantIfStatement")
 	public static boolean hasBackpack(LivingEntity entity) {
-		if (entity.getItemStackFromSlot(EquipmentSlotType.CHEST).getItem() == UMUItems.BACKPACK.get()) {
-			return true;
-		}
+		ItemStack backpack = entity.getItemStackFromSlot(EquipmentSlotType.CHEST);
 
-		return false;
-	}
-
-	public static int getBackpackSize(LivingEntity entity) {
-		return 3;
-		/*
-		if (hasBackpack(entity)) {
-			entity.getItemStackFromSlot(EquipmentSlotType.CHEST).getEnchantmentTagList();
-		}
-		 */
+		return (backpack.getItem() == UMUItems.BACKPACK.get() || backpack.getItem() == UMUItems.FUNCTIONAL_BACKPACK.get());
 	}
 
 	public static boolean hasQuiver(LivingEntity entity) {
-		return false;
+		ItemStack quiver = entity.getItemStackFromSlot(EquipmentSlotType.CHEST);
+
+		return (quiver.getItem() == UMUItems.QUIVER.get() || quiver.getItem() == UMUItems.FUNCTIONAL_BACKPACK.get());
 	}
 
-	public static boolean hasToolbelt(LivingEntity entity) {
-		return false;
+	public static boolean hasTank(LivingEntity entity) {
+		ItemStack tank = entity.getItemStackFromSlot(EquipmentSlotType.CHEST);
+
+		return (tank.getItem() == UMUItems.TANK.get() || tank.getItem() == UMUItems.FUNCTIONAL_BACKPACK.get());
+	}
+
+	public static IItemHandler getBackpackInventory(LivingEntity living) {
+		return UMUItemUtil.getBackpackInventory(living.getItemStackFromSlot(EquipmentSlotType.CHEST));
+	}
+
+	public static IItemHandler getQuiverInventory(LivingEntity living) {
+		return UMUItemUtil.getQuiverInventory(living.getItemStackFromSlot(EquipmentSlotType.CHEST));
+	}
+
+	public static IFluidTankHandler getTankInventory(LivingEntity living) {
+		return UMUItemUtil.getTankCistern(living.getItemStackFromSlot(EquipmentSlotType.CHEST));
+	}
+
+	public static int getBackpackSize(LivingEntity living) {
+		return UMUItemUtil.getBackpackSize(living.getItemStackFromSlot(EquipmentSlotType.CHEST));
 	}
 }

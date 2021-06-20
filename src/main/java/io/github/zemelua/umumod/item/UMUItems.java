@@ -171,6 +171,9 @@ public class UMUItems {
 	public static final RegistryObject<Item> THIN_WOODEN_BOX = ITEMS.register("thin_wooden_box", () -> new BlockItem(UMUBlocks.THIN_WOODEN_BOX.get(), new Item.Properties().group(UMUItemGroups.DECORATIONS)));
 	public static final RegistryObject<Item> QUARTZ_COLUMN = ITEMS.register("quartz_column", () -> new BlockItem(UMUBlocks.QUARTZ_COLUMN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
-	public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register("iron_hammer", () -> new HammerItem(ItemTier.IRON, 6.2F, -3.5F, new Item.Properties().group(ItemGroup.TOOLS)));
-	public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack", () -> new BackpackItem(ArmorMaterial.LEATHER, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.TOOLS)));
+	public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register("iron_hammer", () -> new HammerItem(ItemTier.IRON, 6.2F, -3.5F, new Item.Properties().group(UMUItemGroups.TOOLS)));
+	public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack", () -> new BackpackItem(ArmorMaterial.LEATHER, EquipmentSlotType.CHEST, new Item.Properties().group(UMUItemGroups.TOOLS)));
+	public static final RegistryObject<Item> FUNCTIONAL_BACKPACK = ITEMS.register("functional_backpack", () -> new FunctionalBackpackItem(ArmorMaterial.LEATHER, EquipmentSlotType.CHEST, new Item.Properties().group(UMUItemGroups.TOOLS)));
+	public static final RegistryObject<Item> QUIVER = ITEMS.register("quiver", () -> new QuiverItem(new Item.Properties().group(UMUItemGroups.TOOLS)));
+	public static final RegistryObject<Item> TANK = ITEMS.register("tank", () -> new TankItem(new Item.Properties().group(UMUItemGroups.TOOLS)));
 }

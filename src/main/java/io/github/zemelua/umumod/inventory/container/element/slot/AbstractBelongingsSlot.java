@@ -1,10 +1,10 @@
-package io.github.zemelua.umumod.inventory.container.slot;
+package io.github.zemelua.umumod.inventory.container.element.slot;
 
-import net.minecraft.item.ItemStack;
+import io.github.zemelua.umumod.inventory.container.IUpdateInventoryElement;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public abstract class AbstractBelongingsSlot extends SlotItemHandler {
+public abstract class AbstractBelongingsSlot extends SlotItemHandler implements IUpdateInventoryElement {
 	protected IItemHandler inventoryItemHandler;
 
 	public AbstractBelongingsSlot(IItemHandler baseItemHandler, IItemHandler inventoryItemHandler, int index, int xPosition, int yPosition) {
@@ -16,6 +16,4 @@ public abstract class AbstractBelongingsSlot extends SlotItemHandler {
 	public IItemHandler getItemHandler() {
 		return this.inventoryItemHandler;
 	}
-
-	public abstract void updateInventory(int slotIndex, ItemStack itemStack);
 }

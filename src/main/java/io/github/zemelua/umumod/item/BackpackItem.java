@@ -2,7 +2,7 @@ package io.github.zemelua.umumod.item;
 
 import io.github.zemelua.umumod.capability.BackpackCapabilityProvider;
 import io.github.zemelua.umumod.capability.UMUCapabilities;
-import io.github.zemelua.umumod.client.renderer.model.gui.screen.inventory.BelongingsInventoryScreen;
+import io.github.zemelua.umumod.client.gui.screen.inventory.BelongingsInventoryScreen;
 import io.github.zemelua.umumod.fluid.FluidTankHandler;
 import io.github.zemelua.umumod.fluid.IFluidTankHandler;
 import io.github.zemelua.umumod.inventory.container.BelongingsUMUPlayerContainer;
@@ -38,7 +38,7 @@ public class BackpackItem extends DyeableArmorItem {
 	@Nullable
 	@Override
 	public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundNBT nbt) {
-		return BackpackCapabilityProvider.createTankableBackpackProvider();
+		return new BackpackCapabilityProvider();
 	}
 
 	// Test
@@ -51,20 +51,11 @@ public class BackpackItem extends DyeableArmorItem {
 			inventory.insertItem(0, new ItemStack(Items.DIAMOND, 3), false);
 			context.getPlayer().sendMessage(new StringTextComponent(inventory.getStackInSlot(0).toString()), null);
 
-			tank.fill(new FluidStack(Fluids.WATER, 1), IFluidHandler.FluidAction.EXECUTE);
+			tank.fill(new FluidStack(Fluids.LAVA, 50), IFluidHandler.FluidAction.EXECUTE);
 			context.getPlayer().sendMessage(new StringTextComponent(String.valueOf(tank.getFluidInTank(0).getAmount())), null);
 		}
 
 		return super.onItemUse(context);
-	}
-
-	public static ItemStackHandler getInventory(ItemStack backpack) {
-		IItemHandler inventory = backpack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.EAST).orElse(new ItemStackHandler(36));
-		if (backpack.getItem() == UMUItems.BACKPACK.get() && inventory instanceof ItemStackHandler) {
-			return (ItemStackHandler) inventory;
-		}
-
-		return new ItemStackHandler(36);
 	}
 
 	@SubscribeEvent

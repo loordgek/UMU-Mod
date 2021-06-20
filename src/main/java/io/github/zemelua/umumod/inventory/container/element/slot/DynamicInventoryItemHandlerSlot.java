@@ -1,4 +1,4 @@
-package io.github.zemelua.umumod.inventory.container.slot;
+package io.github.zemelua.umumod.inventory.container.element.slot;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.IInventory;

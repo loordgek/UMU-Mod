@@ -1,10 +1,13 @@
 package io.github.zemelua.umumod.inventory.container;
 
+import io.github.zemelua.umumod.capability.UMUCapabilities;
+import io.github.zemelua.umumod.fluid.FluidTankHandler;
 import io.github.zemelua.umumod.inventory.UMUEquipmentSlotType;
-import io.github.zemelua.umumod.inventory.container.slot.AbstractBelongingsSlot;
-import io.github.zemelua.umumod.inventory.container.slot.BackpackSlot;
-import io.github.zemelua.umumod.inventory.container.slot.EquipmentSlot;
-import io.github.zemelua.umumod.inventory.container.slot.OffhandSlot;
+import io.github.zemelua.umumod.inventory.container.element.slot.AbstractBelongingsSlot;
+import io.github.zemelua.umumod.inventory.container.element.slot.BackpackSlot;
+import io.github.zemelua.umumod.inventory.container.element.slot.EquipmentSlot;
+import io.github.zemelua.umumod.inventory.container.element.slot.OffhandSlot;
+import io.github.zemelua.umumod.inventory.container.element.tank.Tank;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -63,6 +66,11 @@ public class BelongingsUMUPlayerContainer extends AbstractUMUPlayerContainer {
 		for (int i = 0; i < 9; i++) {
 
 		}
+
+		this.addTank(new Tank(
+				0, this.player.getItemStackFromSlot(EquipmentSlotType.CHEST).getCapability(UMUCapabilities.FLUID_TANK_HANDLER_CAPABILITY).orElse(new FluidTankHandler(4)),
+				134, 158
+		));
 	}
 
 	@Override

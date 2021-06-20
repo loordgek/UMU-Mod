@@ -1,4 +1,4 @@
-package io.github.zemelua.umumod.client.renderer.model.gui.screen.inventory;
+package io.github.zemelua.umumod.client.gui.screen.inventory;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;

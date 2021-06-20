@@ -39,6 +39,14 @@ public class FluidTankHandler implements IFluidTankHandler {
 		this.tanks.get(slot).readFromNBT(nbt);
 	}
 
+	@Override
+	public void setStackInTank(int tank, @Nonnull FluidStack stack) {
+		this.validateTankIndex(tank);
+		FluidTank fluidTank = new FluidTank(3);
+		fluidTank.fill(stack, FluidAction.EXECUTE);
+		this.tanks.set(tank, fluidTank);
+	}
+
 	@Nonnull
 	@Override
 	public FluidStack getFluidInTank(int tank) {

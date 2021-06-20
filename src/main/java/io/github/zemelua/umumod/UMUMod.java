@@ -4,7 +4,7 @@ import io.github.zemelua.umumod.block.PlanterBlock;
 import io.github.zemelua.umumod.block.UMUBlocks;
 import io.github.zemelua.umumod.capability.UMUCapabilities;
 import io.github.zemelua.umumod.client.renderer.model.UMUModelLoaders;
-import io.github.zemelua.umumod.client.renderer.model.gui.screen.inventory.BelongingsInventoryScreen;
+import io.github.zemelua.umumod.client.gui.screen.inventory.BelongingsInventoryScreen;
 import io.github.zemelua.umumod.inventory.container.UMUContainers;
 import io.github.zemelua.umumod.item.BackpackItem;
 import io.github.zemelua.umumod.item.UMUItems;
